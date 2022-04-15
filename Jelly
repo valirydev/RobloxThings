@@ -569,7 +569,7 @@ local Success, Error = pcall(function()
     local Framework                = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/UI", true))()
     local ESPFramework             = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/ESP", true))()
     local Watermark                = Framework:CreateWatermark("Femboy Trigger | {game} | {fps}")
-    local FemWare                  = Framework:CreateWindow( "Femboy Trigger", Vector2.new(492, 588), Enum.KeyCode.BackSlash )
+    local FemWare                  = Framework:CreateWindow("Femboy Trigger", Vector2.new(492, 588), Enum.KeyCode.BackSlash )
 
     local General                  = FemWare:CreateTab("General")
     local Visuals                  = FemWare:CreateTab("Visuals")
@@ -628,7 +628,7 @@ local Success, Error = pcall(function()
 
         for i, v in pairs(game.Players:GetPlayers()) do
             if v.UserId == 68246168 or v.UserId == 955294 or v.UserId == 1095419 or v.UserId == 50585425 or v.UserId == 48405917 or v.UserId == 9212846 or v.UserId == 47352513 or v.UserId == 48058122 then
-                StarterGui:SetCore("SendNotification", {Title = "Femboy Triggere"; Text = "Mod Alert\n"..v.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
+                StarterGui:SetCore("SendNotification", {Title = "Femboy Trigger"; Text = "Mod Alert\n"..v.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
             elseif v.UserId == 42066711 or v.UserId == 513615792 then
                 StarterGui:SetCore("SendNotification", {Title = "Femboy Trigger"; Text = "Contractors Alert\n"..v.Name..", Is in the server"; Icon = "rbxassetid://8426126371"; Duration = 1 })
             elseif v.UserId == 151691292 or v.UserId == 92504899 or v.UserId == 31967243 then
@@ -1707,13 +1707,12 @@ end)
 -- // Error Handling
 
 if not Success and Error then
-    printconsole(Error)
     pcall(function()
         local ExecutorUsing            = is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or secure_load and "Sentinel" or KRNL_LOADED and "Krnl" or SONA_LOADED and "Sona" or "WTF?"
         local HttpService              = game:GetService("HttpService")
         
         local RandomTag                = string.sub(HttpService:GenerateGUID(false), 1, 8)
-        local Data                     = { ["content"]=null,["embeds"]={{["title"]="Femboy Trigger - Error Reporter",["description"]="An error has been found while execution.",["color"]=tonumber(0x287cd8),["fields"]={{["name"]="Support Code",["value"]=RandomTag,["inline"]=true},{["name"]="Game",["value"]="https://www.roblox.com/games/"..game.PlaceId,["inline"]=true},{["name"]="Executor",["value"]=ExecutorUsing,["inline"]=true},{["name"]="Error",["value"]="```"..Error.."```"}},["footer"]={["text"]="Femboy Trigger | <date> | <time> | (Aurora Hub)",["icon_url"]="https://www.roblox.com/Thumbs/Avatar.ashx?x=100&y=100&Format=Png&username="..game.Players.LocalPlayer.Name}}}}
+        local Data                     = { ["content"]=null,["embeds"]={{["title"]="Femboy Trigger - Error Reporter",["description"]="An error has been found while execution.",["color"]=tonumber(0x287cd8),["fields"]={{["name"]="Support Code",["value"]=RandomTag,["inline"]=true},{["name"]="Game",["value"]="https://www.roblox.com/games/"..game.PlaceId,["inline"]=true},{["name"]="Executor",["value"]=ExecutorUsing,["inline"]=true},{["name"]="Error",["value"]="```"..Error.."```"}},["footer"]={["text"]="Femboy Trigger | <date> | <time> | (Femboy Trigger)",["icon_url"]="https://www.roblox.com/Thumbs/Avatar.ashx?x=100&y=100&Format=Png&username="..game.Players.LocalPlayer.Name}}}}
 
         local Headers                  = {["Content-Type"]="application/json"}
         local Encoded                  = HttpService:JSONEncode(Data)
