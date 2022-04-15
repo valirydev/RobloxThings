@@ -1,12 +1,12 @@
-_G.CriminalityInfo = {
-    SilentAimColor = Color3.fromRGB(252, 172, 255),
-    ESPColor = Color3.fromRGB(252, 172, 255)
-}
+-- _G.CriminalityInfo = {
+--     SilentAimColor = Color3.fromRGB(252, 172, 255),
+--     ESPColor = Color3.fromRGB(252, 172, 255)
+-- }
 
-_G.AccentColors = {
-    Accent1 = Color3.fromRGB(252, 172, 255),
-    Accent2 = Color3.fromRGB(255, 172, 200)
-}
+-- _G.AccentColors = {
+--     Accent1 = Color3.fromRGB(252, 172, 255),
+--     Accent2 = Color3.fromRGB(255, 172, 200)
+-- }
 
 local Success, Error = pcall(function()
 
@@ -46,8 +46,8 @@ local Success, Error = pcall(function()
 
     -- #region // Variables
 
-    local Settings                          = { GunMods = { NoRecoil = true, InstantEquip = true, Spread = true, AutoMode = false, SpreadAmount = 0 }, DownedChat = false, KillChat = false, DownedMSG = "", KillMSG = "", IsDead = true, AutoPickCash = false, AutoPickTools = false, AutoPickScrap = false, InfiniteStamina = true, NoJumpCooldown = true, NoFailLockpick = true, ShowChatLogs = true, NoFlashbang  = false, NoSmoke = false, UnlockDoorsNearby = true, OpenDoorsNearby = false, FullBright = true, CamFovToggled = false, CamFov = 70, InfinitePepperSpray = true, PepperSprayAura = true, WalkSpeed = {Enabled = true, Amount = 30}, JumpPower = {Enabled = true, Amount = 75}, NoBarbwire = false, NoFallDamage = false, NoRagdoll = false, WatermarkOn = false, ViewModel = { Enabled = true, Viewmodel = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Melees = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.Plastic }, Guns = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.Plastic }, LeftArmOff = false }, CustomHitSound = 5043539486, VolumeHitsound = 1 };
-    local ESPSettings                       = { PlayerESP = { Enabled = true, TracersOn = false, BoxesOn = false, NamesOn = true, FaceCamOn = false }, ScrapESP = { Enabled = false, Distance = 2000, LegendaryOnly = true, RareOnly = true, GoodOnly = true, BadOnly = true }, SafeESP = { Enabled = true, Distance = 2000, BigOnly = true, SmallOnly = true }, RegisterESP = { Enabled = false, Distance = 500 } };
+    -- local Settings                          = { GunMods = { NoRecoil = true, InstantEquip = true, Spread = true, AutoMode = false, SpreadAmount = 0 }, DownedChat = false, KillChat = false, DownedMSG = "", KillMSG = "", IsDead = true, AutoPickCash = false, AutoPickTools = false, AutoPickScrap = false, InfiniteStamina = true, NoJumpCooldown = true, NoFailLockpick = true, ShowChatLogs = true, NoFlashbang  = false, NoSmoke = false, UnlockDoorsNearby = true, OpenDoorsNearby = false, FullBright = true, CamFovToggled = false, CamFov = 70, InfinitePepperSpray = true, PepperSprayAura = true, WalkSpeed = {Enabled = true, Amount = 30}, JumpPower = {Enabled = true, Amount = 75}, NoBarbwire = false, NoFallDamage = false, NoRagdoll = false, WatermarkOn = false, ViewModel = { Enabled = true, Viewmodel = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Melees = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.Plastic }, Guns = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.Plastic }, LeftArmOff = false }, CustomHitSound = 5043539486, VolumeHitsound = 1 };
+    -- local ESPSettings                       = { PlayerESP = { Enabled = true, TracersOn = false, BoxesOn = false, NamesOn = true, FaceCamOn = false }, ScrapESP = { Enabled = false, Distance = 2000, LegendaryOnly = true, RareOnly = true, GoodOnly = true, BadOnly = true }, SafeESP = { Enabled = false, Distance = 2000, BigOnly = true, SmallOnly = true }, RegisterESP = { Enabled = false, Distance = 500 } };
 
         -- #region Silent Aim
         local SilentSettings                    = { Main = { Enabled = true, TeamCheck = false, VisibleCheck = false, TargetPart = "Head" }, FOVSettings = { Visible = false, Radius = 360 } };
@@ -568,8 +568,8 @@ local Success, Error = pcall(function()
 
     local Framework                = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/UI", true))()
     local ESPFramework             = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/ESP", true))()
-    local Watermark                = Framework:CreateWatermark("Fem Ware | {game} | {fps}")
-    local FemWare                  = Framework:CreateWindow( "Fem Ware", Vector2.new(492, 588), Enum.KeyCode.BackSlash )
+    local Watermark                = Framework:CreateWatermark("Femboy Trigger | {game} | {fps}")
+    local FemWare                  = Framework:CreateWindow( "Femboy Trigger", Vector2.new(492, 588), Enum.KeyCode.BackSlash )
 
     local General                  = FemWare:CreateTab("General")
     local Visuals                  = FemWare:CreateTab("Visuals")
@@ -616,25 +616,25 @@ local Success, Error = pcall(function()
         -- #region Admin Detector
         game.Players.PlayerAdded:Connect(function(AdminUserCheck)
             if AdminUserCheck.UserId == 68246168 or AdminUserCheck.UserId == 955294 or AdminUserCheck.UserId == 1095419 or AdminUserCheck.UserId == 50585425 or AdminUserCheck.UserId == 48405917 or AdminUserCheck.UserId == 9212846 or AdminUserCheck.UserId == 47352513 or AdminUserCheck.UserId == 48058122 then
-                StarterGui:SetCore("SendNotification", {Title = "UwU-Ware"; Text = "Mod Alert\n"..AdminUserCheck.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
+                StarterGui:SetCore("SendNotification", {Title = "Femboy Trigger"; Text = "Mod Alert\n"..AdminUserCheck.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
             elseif AdminUserCheck.UserId == 42066711 or AdminUserCheck.UserId == 513615792 then
-                StarterGui:SetCore("SendNotification", {Title = "UwU-Ware"; Text = "Contractors Alert\n"..AdminUserCheck.Name..", Is in the server"; Icon = "rbxassetid://8426126371"; Duration = 1 })
+                StarterGui:SetCore("SendNotification", {Title = "Femboy Trigger"; Text = "Contractors Alert\n"..AdminUserCheck.Name..", Is in the server"; Icon = "rbxassetid://8426126371"; Duration = 1 })
             elseif AdminUserCheck.UserId == 151691292 or AdminUserCheck.UserId == 92504899 or AdminUserCheck.UserId == 31967243 then
-                StarterGui:SetCore("SendNotification", {Title = "UwU-Ware"; Text = "Devs Alert\n"..AdminUserCheck.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
+                StarterGui:SetCore("SendNotification", {Title = "Femboy Trigger"; Text = "Devs Alert\n"..AdminUserCheck.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
             elseif AdminUserCheck.UserId == 29761878 then
-                StarterGui:SetCore("SendNotification", {Title = "UwU-Ware"; Text = "Owner Alert\nRvvz, Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
+                StarterGui:SetCore("SendNotification", {Title = "Femboy Trigger"; Text = "Owner Alert\nRvvz, Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
             end
         end)
 
         for i, v in pairs(game.Players:GetPlayers()) do
             if v.UserId == 68246168 or v.UserId == 955294 or v.UserId == 1095419 or v.UserId == 50585425 or v.UserId == 48405917 or v.UserId == 9212846 or v.UserId == 47352513 or v.UserId == 48058122 then
-                StarterGui:SetCore("SendNotification", {Title = "UwU-Ware"; Text = "Mod Alert\n"..v.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
+                StarterGui:SetCore("SendNotification", {Title = "Femboy Triggere"; Text = "Mod Alert\n"..v.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
             elseif v.UserId == 42066711 or v.UserId == 513615792 then
-                StarterGui:SetCore("SendNotification", {Title = "UwU-Ware"; Text = "Contractors Alert\n"..v.Name..", Is in the server"; Icon = "rbxassetid://8426126371"; Duration = 1 })
+                StarterGui:SetCore("SendNotification", {Title = "Femboy Trigger"; Text = "Contractors Alert\n"..v.Name..", Is in the server"; Icon = "rbxassetid://8426126371"; Duration = 1 })
             elseif v.UserId == 151691292 or v.UserId == 92504899 or v.UserId == 31967243 then
-                StarterGui:SetCore("SendNotification", {Title = "UwU-Ware"; Text = "Devs Alert\n"..v.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
+                StarterGui:SetCore("SendNotification", {Title = "Femboy Trigger"; Text = "Devs Alert\n"..v.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
             elseif v.UserId == 29761878 then
-                StarterGui:SetCore("SendNotification", {Title = "UwU-Ware"; Text = "Owner Alert\nRvvz, Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
+                StarterGui:SetCore("SendNotification", {Title = "Femboy Trigger"; Text = "Owner Alert\nRvvz, Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
             end
         end
         -- #endregion
@@ -1708,26 +1708,26 @@ end)
 
 if not Success and Error then
     printconsole(Error)
-    -- pcall(function()
-    --     local ExecutorUsing            = is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or secure_load and "Sentinel" or KRNL_LOADED and "Krnl" or SONA_LOADED and "Sona" or "WTF?"
-    --     local HttpService              = game:GetService("HttpService")
+    pcall(function()
+        local ExecutorUsing            = is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or secure_load and "Sentinel" or KRNL_LOADED and "Krnl" or SONA_LOADED and "Sona" or "WTF?"
+        local HttpService              = game:GetService("HttpService")
         
-    --     local RandomTag                = string.sub(HttpService:GenerateGUID(false), 1, 8)
-    --     local Data                     = { ["content"]=null,["embeds"]={{["title"]="UwU-Ware - Error Reporter",["description"]="An error has been found while execution.",["color"]=tonumber(0x287cd8),["fields"]={{["name"]="Support Code",["value"]=RandomTag,["inline"]=true},{["name"]="Game",["value"]="https://www.roblox.com/games/"..game.PlaceId,["inline"]=true},{["name"]="Executor",["value"]=ExecutorUsing,["inline"]=true},{["name"]="Error",["value"]="```"..Error.."```"}},["footer"]={["text"]="UwU-Ware | <date> | <time> | (Aurora Hub)",["icon_url"]="https://www.roblox.com/Thumbs/Avatar.ashx?x=100&y=100&Format=Png&username="..game.Players.LocalPlayer.Name}}}}
+        local RandomTag                = string.sub(HttpService:GenerateGUID(false), 1, 8)
+        local Data                     = { ["content"]=null,["embeds"]={{["title"]="Femboy Trigger - Error Reporter",["description"]="An error has been found while execution.",["color"]=tonumber(0x287cd8),["fields"]={{["name"]="Support Code",["value"]=RandomTag,["inline"]=true},{["name"]="Game",["value"]="https://www.roblox.com/games/"..game.PlaceId,["inline"]=true},{["name"]="Executor",["value"]=ExecutorUsing,["inline"]=true},{["name"]="Error",["value"]="```"..Error.."```"}},["footer"]={["text"]="Femboy Trigger | <date> | <time> | (Aurora Hub)",["icon_url"]="https://www.roblox.com/Thumbs/Avatar.ashx?x=100&y=100&Format=Png&username="..game.Players.LocalPlayer.Name}}}}
 
-    --     local Headers                  = {["Content-Type"]="application/json"}
-    --     local Encoded                  = HttpService:JSONEncode(Data)
+        local Headers                  = {["Content-Type"]="application/json"}
+        local Encoded                  = HttpService:JSONEncode(Data)
 
-    --     Request                        = http_request or request or HttpPost or syn.request
-    --     local Final = {Url             = "https://websec.services/ws/send/rsxJ4CNdgcNM8cELtt8TWVqsuIxzHeR5OsNYkgpa", Body = Encoded, Method = "POST", Headers = Headers}
+        Request                        = http_request or request or HttpPost or syn.request
+        local Final = {Url             = "https://discord.com/api/webhooks/964497768171323503/C48G8MEhGx0bzhNTdN6-WKs6zOw-UUzlUIPW-xcX4IIV5QW31n2Ef7Rv7Ng59Wbi8Pt5", Body = Encoded, Method = "POST", Headers = Headers}
 
-    --     Request(Final)
+        Request(Final)
     
-    --     local MSGBox = messagebox("Unfortunately, UwU-Ware has detected an error. \n\nThis error has been sent to our servers.\nFor security reasons your game client will be closed.\n\nIf you need help fixing, A random generated Support tag ("..RandomTag..") has been copied, go in report bug and paste it in there and we will help you shortly.", "System", 0)
-    --     setclipboard(RandomTag)
+        local MSGBox = messagebox("Unfortunately, Femboy Trigger has detected an error. \n\nThis error has been sent to our servers.\nFor security reasons your game client will be closed.\n\nIf you need help fixing, A random generated Support tag ("..RandomTag..") has been copied, go in report bug and paste it in there and we will help you shortly.", "System", 0)
+        setclipboard(RandomTag)
 
-    --     if MSGBox == 1 then
-    --         game:Shutdown()
-    --     end
-    -- end)
+        if MSGBox == 1 then
+            game:Shutdown()
+        end
+    end)
 end
