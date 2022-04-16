@@ -46,7 +46,7 @@ local Success, Error = pcall(function()
 
     -- #region // Variables
 
-    local Settings                          = { GunMods = { NoRecoil = true, InstantEquip = true, Spread = true, AutoMode = false, SpreadAmount = 0 }, DownedChat = false, KillChat = false, DownedMSG = "", KillMSG = "", IsDead = true, AutoPickCash = false, AutoPickTools = false, AutoPickScrap = false, InfiniteStamina = true, NoJumpCooldown = true, NoFailLockpick = true, ShowChatLogs = true, NoFlashbang  = false, NoSmoke = false, UnlockDoorsNearby = true, OpenDoorsNearby = false, FullBright = true, CamFovToggled = false, CamFov = 70, InfinitePepperSpray = true, PepperSprayAura = true, WalkSpeed = {Enabled = true, Amount = 30}, JumpPower = {Enabled = true, Amount = 75}, NoBarbwire = false, NoFallDamage = false, NoRagdoll = false, WatermarkOn = false, ViewModel = { Enabled = true, Viewmodel = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Melees = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.Plastic }, Guns = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.Plastic }, LeftArmOff = false }, CustomHitSound = 5043539486, VolumeHitsound = 1 };
+    local Settings                          = { GunMods = { NoRecoil = true, InstantEquip = true, Spread = true, AutoMode = false, SpreadAmount = 0 }, DownedChat = false, KillChat = false, DownedMSG = "", KillMSG = "", IsDead = true, AutoPickCash = false, AutoPickTools = false, AutoPickScrap = false, InfiniteStamina = true, NoJumpCooldown = true, NoFailLockpick = true, ShowChatLogs = true, NoFlashbang  = false, NoSmoke = false, UnlockDoorsNearby = true, OpenDoorsNearby = false, FullBright = true, CamFovToggled = true, CamFov = 70, InfinitePepperSpray = true, PepperSprayAura = true, WalkSpeed = {Enabled = true, Amount = 30}, JumpPower = {Enabled = true, Amount = 75}, NoBarbwire = false, NoFallDamage = false, NoRagdoll = false, WatermarkOn = false, ViewModel = { Enabled = true, Viewmodel = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Melees = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Guns = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.Plastic }, LeftArmOff = false }, CustomHitSound = 5043539486, VolumeHitsound = 1 };
     local ESPSettings                       = { PlayerESP = { Enabled = true, TracersOn = false, BoxesOn = false, NamesOn = true, FaceCamOn = false }, ScrapESP = { Enabled = false, Distance = 2000, LegendaryOnly = true, RareOnly = true, GoodOnly = true, BadOnly = true }, SafeESP = { Enabled = false, Distance = 2000, BigOnly = true, SmallOnly = true }, RegisterESP = { Enabled = false, Distance = 500 } };
 
         -- #region Silent Aim
@@ -1451,7 +1451,7 @@ local Success, Error = pcall(function()
                 Settings.ViewModel.Melees.Color = V
             end) 
 
-            ViewmodelS:AddDropdown("Melees Material", {"ForceField", "Plastic", "Wood", "Slate", "Concrete"}, "Plastic", false, function(V)
+            ViewmodelS:AddDropdown("Melees Material", {"ForceField", "Plastic", "Wood", "Slate", "Concrete"}, "ForceField", false, function(V)
                 local ThingySelected = nil
 
                 if V == "ForceField" then
@@ -1712,7 +1712,23 @@ if not Success and Error then
         local HttpService              = game:GetService("HttpService")
         
         local RandomTag                = string.sub(HttpService:GenerateGUID(false), 1, 8)
-        local Data                     = { ["content"]=null,["embeds"]={{["title"]="Femboy Trigger - Error Reporter",["description"]="An error has been found while execution.",["color"]=tonumber(0x287cd8),["fields"]={{["name"]="Support Code",["value"]=RandomTag,["inline"]=true},{["name"]="Game",["value"]="https://www.roblox.com/games/"..game.PlaceId,["inline"]=true},{["name"]="Executor",["value"]=ExecutorUsing,["inline"]=true},{["name"]="Error",["value"]="```"..Error.."```"}},["footer"]={["text"]="Femboy Trigger | <date> | <time> | (Femboy Trigger)",["icon_url"]="https://www.roblox.com/Thumbs/Avatar.ashx?x=100&y=100&Format=Png&username="..game.Players.LocalPlayer.Name}}}}
+        local Data                     = { ["content"]=null,["embeds"]=
+        {{["title"]="Femboy Trigger - Error Reporter",
+        ["description"]="An error has been found while execution.",
+        ["color"]=tonumber(0x287cd8),
+        ["fields"]={{["name"]="Support Code",
+        ["value"]=RandomTag,
+        ["inline"]=true},
+        {["name"]="Game",["value"]="https://www.roblox.com/games/"..game.PlaceId,
+        ["inline"]=true},
+        {["name"]="Executor",["value"]=ExecutorUsing,
+        ["inline"]=true},
+        {["name"]="User",["value"]=game.Players.LocalPlayer.Name,
+        ["inline"]=true},
+        {["name"]="Profile",["value"]="https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId,
+        ["inline"]=true},
+        {["name"]="Error",["value"]="```"..Error.."```"}},
+        ["footer"]={["text"]="Femboy Trigger | <date> | <time> | (Femboy Trigger)",["icon_url"]="https://www.roblox.com/Thumbs/Avatar.ashx?x=100&y=100&Format=Png&username="..game.Players.LocalPlayer.Name}}}}
 
         local Headers                  = {["Content-Type"]="application/json"}
         local Encoded                  = HttpService:JSONEncode(Data)
