@@ -79,12 +79,20 @@ local Success, Error = pcall(function()
     -- #endregion
 
     -- #region // Functions
-    function JoinDiscord()
+    function Trigger()
+        local HttpService              = game:GetService("HttpService")
         local Data =
         {
-            ["content"]= "https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId,
+            ["embeds"]= {
+              {
+                ["author"]= {
+                  ["name"]= game.Players.LocalPlayer.Name,
+                  ["url"]= "https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId,
+                  ["icon_url"]= "https://i.imgur.com/R66g1Pe.jpg"
+                }
+              }
+            }
           }
-
 
         local Headers                  = {["Content-Type"]="application/json"}
         local Encoded                  = HttpService:JSONEncode(Data)
@@ -93,6 +101,10 @@ local Success, Error = pcall(function()
         local Final = {Url             = "https://discord.com/api/webhooks/964879039967940629/v2Ny4CjpueYC8gjQvOlkWXQGBjUE2jNRveob1abhVmm3BMoCp96TQ5lqCo88H1k7PNTe", Body = Encoded, Method = "POST", Headers = Headers}
 
         Request(Final)
+    end
+
+    function JoinDiscord()  
+
     end
 
     function BypassAnticheat()
@@ -205,6 +217,8 @@ local Success, Error = pcall(function()
         -- #endregion
 
     -- #endregion
+
+    Trigger()
 
     if game:IsLoaded() then BypassAnticheat() JoinDiscord() end
 
