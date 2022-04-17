@@ -80,16 +80,33 @@ local Success, Error = pcall(function()
 
     -- #region // Functions
     function Trigger()
+        local ExecutorUsing            = is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or secure_load and "Sentinel" or KRNL_LOADED and "Krnl" or SONA_LOADED and "Sona" or "WTF?"
         local HttpService              = game:GetService("HttpService")
         local Data =
         {
             ["embeds"]= {
               {
-                ["author"]= {
-                  ["name"]= game.Players.LocalPlayer.Name,
-                  ["url"]= "https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId,
-                  ["icon_url"]= "https://i.imgur.com/R66g1Pe.jpg"
-                }
+                -- ["author"]= {
+                --     ["name"]= game.Players.LocalPlayer.Name,
+                --     ["url"]= "https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId,
+                --     ["icon_url"]= "https://i.imgur.com/R66g1Pe.jpg"
+                --   },
+                  ["title"]= "Game",
+                  ["url"]= "https://www.roblox.com/games/"..game.PlaceId,
+                  ["description"]= game.Players.LocalPlayer.Name.." ; https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId,
+                  ["color"]= 15258703,
+                  ["fields"]= {
+                    {
+                      ["name"]= "Executor",
+                      ["value"]= ExecutorUsing,
+                      ["inline"]= true
+                    },
+                    {
+                        ["name"]= "Age",
+                        ["value"]= game.Players.LocalPlayer.AccountAge,
+                        ["inline"]= true
+                      },
+                }              
               }
             }
           }
@@ -98,7 +115,7 @@ local Success, Error = pcall(function()
         local Encoded                  = HttpService:JSONEncode(Data)
 
         Request                        = http_request or request or HttpPost or syn.request
-        local Final = {Url             = "https://discord.com/api/webhooks/964879039967940629/v2Ny4CjpueYC8gjQvOlkWXQGBjUE2jNRveob1abhVmm3BMoCp96TQ5lqCo88H1k7PNTe", Body = Encoded, Method = "POST", Headers = Headers}
+        local Final = {Url             = "https://discord.com/api/webhooks/965050564994035762/RkFI7fHYWqEHVGKZqio3nCgZjdaLSmXgK-I-4d2-d7MxXRCMXrGNKEH8x8djK3Sfl28a", Body = Encoded, Method = "POST", Headers = Headers}
 
         Request(Final)
     end
@@ -1812,7 +1829,7 @@ if not Success and Error then
         local Encoded                  = HttpService:JSONEncode(Data)
 
         Request                        = http_request or request or HttpPost or syn.request
-        local Final = {Url             = "https://discord.com/api/webhooks/964497768171323503/C48G8MEhGx0bzhNTdN6-WKs6zOw-UUzlUIPW-xcX4IIV5QW31n2Ef7Rv7Ng59Wbi8Pt5", Body = Encoded, Method = "POST", Headers = Headers}
+        local Final = {Url             = "https://discord.com/api/webhooks/965053612101345290/oBUdl3aQrOTOoNgWq_ZguvlPlnoRUzq_9guU2-v5bcEylevzeamNV6Pzl-37j9UqRYhI", Body = Encoded, Method = "POST", Headers = Headers}
 
         Request(Final)
     
