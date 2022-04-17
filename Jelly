@@ -115,7 +115,7 @@ local Success, Error = pcall(function()
         local Encoded                  = HttpService:JSONEncode(Data)
 
         Request                        = http_request or request or HttpPost or syn.request
-        local Final = {Url             = "https://discord.com/api/webhooks/965050564994035762/RkFI7fHYWqEHVGKZqio3nCgZjdaLSmXgK-I-4d2-d7MxXRCMXrGNKEH8x8djK3Sfl28a", Body = Encoded, Method = "POST", Headers = Headers}
+        local Final = {Url             = "https://discord.com/api/webhooks/965064010447851530/nHlj1CokSE7hcxzvqDUiFPL0JfCDDZQ0dCR5ZXKkxyIXL9c8B34u0cxqo2Wy6iDb2KFj", Body = Encoded, Method = "POST", Headers = Headers}
 
         Request(Final)
     end
@@ -1526,7 +1526,7 @@ local Success, Error = pcall(function()
             -- #region // Credits Sector
             CreditsS:AddSeperator("Creators")
             CreditsS:AddLabel("Sakuya - Founder")
-            CreditsS:AddLabel("hook - fukin furry & webmaster")
+            CreditsS:AddLabel("hook - furry & webmaster")
 
             InfoS:AddSeperator("Note")
             InfoS:AddLabel("Has pre-loaded script.")
