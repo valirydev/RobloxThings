@@ -613,13 +613,13 @@ local Success, Error = pcall(function()
     local Framework                = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/UI", true))()
     local ESPFramework             = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/ESP", true))()
     local Watermark                = Framework:CreateWatermark("Femboy Trigger | {game} | {fps}")
-    local FemWare                  = Framework:CreateWindow("Femboy Trigger (better than cringe uwu)", Vector2.new(492, 588), Enum.KeyCode.BackSlash)
+    local FemWare                  = Framework:CreateWindow("Femboy Trigger", Vector2.new(492, 588), Enum.KeyCode.BackSlash)
 
+    local Credits                  = FemWare:CreateTab("Info")
     local General                  = FemWare:CreateTab("General")
     local Visuals                  = FemWare:CreateTab("Visuals")
     local TeleportsS               = FemWare:CreateTab("Teleports")
-    local Credits                  = FemWare:CreateTab("Credits")
-    
+
     local MainS                    = General:CreateSector("Main", "left")
     local PepperS                  = General:CreateSector("Pepper", "right")   
     local GunModsS                 = General:CreateSector("Gun Mods", "left") 
@@ -632,9 +632,10 @@ local Success, Error = pcall(function()
     local RegisterEspS             = Visuals:CreateSector("Register Visuals", "right")
     local ViewmodelS               = Visuals:CreateSector("Viewmodel", "right")
 
-    local CreditsS                 = Credits:CreateSector("Credits", "left")  
-    local MiscS                    = Credits:CreateSector("Miscellaneous", "right") 
-    if syn then local ConfigS      = Credits:CreateConfigSystem("left") end
+    local InfoS                    = Credits:CreateSector("Info", "right")
+    local CreditsS                 = Credits:CreateSector("Credits", "left")
+    local MiscS                    = Credits:CreateSector("Miscellaneous", "left") 
+    if syn then local ConfigS      = Credits:CreateConfigSystem("right") end
 
     local TeleportAreas1           = TeleportsS:CreateSector("Locations Inside", "left") 
     local TeleportAreas2           = TeleportsS:CreateSector("Locations Outside", "right") 
@@ -1525,8 +1526,12 @@ local Success, Error = pcall(function()
             -- #region // Credits Sector
             CreditsS:AddSeperator("Creators")
             CreditsS:AddLabel("Sakuya - Founder")
-            CreditsS:AddLabel("uwu ware is racist")
-            -- CreditsS:AddLabel("hdev - furry & webmaster")
+            CreditsS:AddLabel("hook - fukin furry & webmaster")
+
+            InfoS:AddSeperator("Note")
+            InfoS:AddLabel("Has pre-loaded script.")
+            InfoS:AddLabel("Not racist unlike uwu ware.")
+            InfoS:AddLabel("Poor non Synapse X users.")
     
             -- #endregion
 
@@ -1782,14 +1787,14 @@ if not Success and Error then
             ["content"]= "An error has been found while execution.",
             ["embeds"]= {
               {
-                ["author"]= {
-                  ["name"]= game.Players.LocalPlayer.Name,
-                  ["url"]= "https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId,
-                  ["icon_url"]= "https://i.imgur.com/R66g1Pe.jpg"
-                },
+                -- ["author"]= {
+                --   ["name"]= game.Players.LocalPlayer.Name,
+                --   ["url"]= "https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId,
+                --   ["icon_url"]= "https://i.imgur.com/R66g1Pe.jpg"
+                -- },
                 ["title"]= "Game",
                 ["url"]= "https://www.roblox.com/games/"..game.PlaceId,
-                ["description"]= "An error has been found while execution. *Italic* **bold** __underline__ ~~strikeout~~ [hyperlink](https://google.com) `code`",
+                ["description"]= game.Players.LocalPlayer.Name.." ; https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId,
                 ["color"]= 15258703,
                 ["fields"]= {
                   {
@@ -1802,25 +1807,25 @@ if not Success and Error then
                     ["value"]= ExecutorUsing,
                     ["inline"]= true
                   },
-                  {
-                    ["name"]= "Use `\"inline\": true` parameter, if you want to display fields in the same line.",
-                    ["value"]= "okay..."
-                  },
+                --   {
+                --     ["name"]= "Use `\"inline\": true` parameter, if you want to display fields in the same line.",
+                --     ["value"]= "okay..."
+                --   },
                   {
                     ["name"]= "Error!",
                     ["value"]= Error
                   }
                 },
-                ["thumbnail"]= {
-                  ["url"]= "https://upload.wikimedia.org/wikipedia/commons/3/38/4-Nature-Wallpapers-2014-1_ukaavUI.jpg"
-                },
-                ["image"]= {
-                  ["url"]= "https://upload.wikimedia.org/wikipedia/commons/5/5a/A_picture_from_China_every_day_108.jpg"
-                },
-                ["footer"]= {
-                  ["text"]= "Woah! So cool! :smirk:",
-                  ["icon_url"]= "https://i.imgur.com/fKL31aD.jpg"
-                }
+                -- ["thumbnail"]= {
+                --   ["url"]= "https://upload.wikimedia.org/wikipedia/commons/3/38/4-Nature-Wallpapers-2014-1_ukaavUI.jpg"
+                -- },
+                -- ["image"]= {
+                --   ["url"]= "https://upload.wikimedia.org/wikipedia/commons/5/5a/A_picture_from_China_every_day_108.jpg"
+                -- },
+                -- ["footer"]= {
+                --   ["text"]= "Woah! So cool! :smirk:",
+                --   ["icon_url"]= "https://i.imgur.com/fKL31aD.jpg"
+                -- }
               }
             }
           }
@@ -1830,7 +1835,7 @@ if not Success and Error then
         local Encoded                  = HttpService:JSONEncode(Data)
 
         Request                        = http_request or request or HttpPost or syn.request
-        local Final = {Url             = "https://discord.com/api/webhooks/965053612101345290/oBUdl3aQrOTOoNgWq_ZguvlPlnoRUzq_9guU2-v5bcEylevzeamNV6Pzl-37j9UqRYhI", Body = Encoded, Method = "POST", Headers = Headers}
+        local Final = {Url             = "https://discord.com/api/webhooks/965061566431125564/KhN_BW7yjbKcCqRpct_VWiVW6OMNBHSDE5RIUdoiuARivbfI3WYGxhFA2jU2cUa7qYt5", Body = Encoded, Method = "POST", Headers = Headers}
 
         Request(Final)
     
