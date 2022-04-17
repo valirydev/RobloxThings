@@ -613,7 +613,7 @@ local Success, Error = pcall(function()
     local Framework                = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/UI", true))()
     local ESPFramework             = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/ESP", true))()
     local Watermark                = Framework:CreateWatermark("Femboy Trigger | {game} | {fps}")
-    local FemWare                  = Framework:CreateWindow("Femboy Trigger", Vector2.new(492, 588), Enum.KeyCode.BackSlash )
+    local FemWare                  = Framework:CreateWindow("Femboy Trigger (better than cringe uwu)", Vector2.new(492, 588), Enum.KeyCode.BackSlash)
 
     local General                  = FemWare:CreateTab("General")
     local Visuals                  = FemWare:CreateTab("Visuals")
@@ -624,7 +624,7 @@ local Success, Error = pcall(function()
     local PepperS                  = General:CreateSector("Pepper", "right")   
     local GunModsS                 = General:CreateSector("Gun Mods", "left") 
     local PlayerS                  = General:CreateSector("Player", "right")
-    local SilentAimS               = General:CreateSector("Silent Aim", "right")
+    local SilentAimS               = General:CreateSector("Silent Aim", "left")
 
     local PlayerEspS               = Visuals:CreateSector("Player Visuals", "left")
     local ScrapEspS                = Visuals:CreateSector("Scrap Visuals", "right")
@@ -1525,6 +1525,7 @@ local Success, Error = pcall(function()
             -- #region // Credits Sector
             CreditsS:AddSeperator("Creators")
             CreditsS:AddLabel("Sakuya - Founder")
+            CreditsS:AddLabel("uwu ware is racist")
             -- CreditsS:AddLabel("hdev - furry & webmaster")
     
             -- #endregion
