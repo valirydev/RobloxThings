@@ -91,9 +91,9 @@ local Success, Error = pcall(function()
                 --     ["url"]= "https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId,
                 --     ["icon_url"]= "https://i.imgur.com/R66g1Pe.jpg"
                 --   },
-                  ["title"]= "Game",
+                  ["title"]= "Experience",
                   ["url"]= "https://www.roblox.com/games/"..game.PlaceId,
-                  ["description"]= game.Players.LocalPlayer.Name.." ; https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId,
+                  ["description"]= game.Players.LocalPlayer.Name.."; https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId,
                   ["color"]= 15258703,
                   ["fields"]= {
                     {
