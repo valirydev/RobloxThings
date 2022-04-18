@@ -1814,7 +1814,7 @@ if not Success and Error then
 
         Request(Final)
     
-        local MSGBox = messagebox("Unfortunately, Femboy Trigger has detected an error. \n\nThis error has been sent to our servers.\nFor security reasons your game client will be closed.\n\nIf you need help fixing, A random generated Support tag ("..RandomTag..") has been copied, go in report bug and paste it in there and we will help you shortly.", "System", 0)
+        local MSGBox = messagebox("Femboy Trigger has detected an error. Either your Executor or an unexpected error has caused this. \n\nThis error has been sent to our servers.\nFor security reasons your game client will be closed.\n\nIf you need help fixing, A random generated Support tag ("..RandomTag..") has been copied, go in report bug and paste it in there and we will help you shortly.", "System", 0)
         setclipboard(RandomTag)
 
         if MSGBox == 1 then
