@@ -603,6 +603,7 @@ local Success, Error = pcall(function()
     local Framework                = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/UI", true))()
     local ESPFramework             = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/ESP", true))()
     local Watermark                = Framework:CreateWatermark("Femboy Trigger | {game} | {fps}")
+    if UIKey == nil then UIKey = Enum.KeyCode.BackSlash end
     local FemWare                  = Framework:CreateWindow("Femboy Trigger", Vector2.new(492, 588), UIKey)
 
     local Credits                  = FemWare:CreateTab("Info")
@@ -625,7 +626,7 @@ local Success, Error = pcall(function()
     local InfoS                    = Credits:CreateSector("Info", "right")
     local CreditsS                 = Credits:CreateSector("Credits", "left")
     local MiscS                    = Credits:CreateSector("Miscellaneous", "left") 
-    local ConfigS                  = Credits:CreateConfigSystem("left")
+    local ConfigS                  = Credits:CreateConfigSystem("right")
 
     local TeleportAreas1           = TeleportsS:CreateSector("Locations Inside", "left") 
     local TeleportAreas2           = TeleportsS:CreateSector("Locations Outside", "right") 
@@ -1522,7 +1523,7 @@ local Success, Error = pcall(function()
             InfoS:AddLabel("Has pre-loaded script.")
             InfoS:AddLabel("Not racist unlike uwu ware.")
             InfoS:AddLabel("Poor non Synapse X users.")
-            InfoS:AddLabel("BackSlash to Close/Open UI (Default)")
+            if UIKey == Enum.KeyCode.BackSlash then InfoS:AddLabel("BackSlash to Close/Open UI") end
 
     
             -- #endregion
