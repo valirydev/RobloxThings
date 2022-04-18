@@ -62,7 +62,7 @@ library.theme.accentcolor = _G.AccentColors.Accent1
 library.theme.accentcolor2 = _G.AccentColors.Accent2
 
 
-if library.theme.cursor and Drawing then
+if library.theme.cursor then
     local success = pcall(function() 
         library.cursor = Drawing.new("Image")
         library.cursor.Data = game:HttpGet(library.theme.cursorimg)
@@ -73,9 +73,11 @@ if library.theme.cursor and Drawing then
     end)
     if success and library.cursor then
         uis.InputChanged:Connect(function(input)
+            if uis.MouseEnabled then
                 if input.UserInputType == Enum.UserInputType.MouseMovement then
                     library.cursor.Position = Vector2.new(input.Position.X - 32, input.Position.Y + 7)
                 end
+            end
         end)
         
         game:GetService("RunService").RenderStepped:Connect(function()
@@ -83,7 +85,7 @@ if library.theme.cursor and Drawing then
             library.cursor.Visible = uis.MouseEnabled and (uis.MouseIconEnabled or game:GetService("GuiService").MenuIsOpen)
         end)
     elseif not success and library.cursor then
-        -- library.cursor:Remove()
+        library.cursor:Remove()
     end
 end
 
@@ -3416,7 +3418,7 @@ function library:CreateWindow(name, size, hidebutton)
         function tab:CreateConfigSystem(side)
             local configSystem = { }
 
-            configSystem.configFolder = "uwuware"
+            configSystem.configFolder = "Femboy_Configs"
             if (not isfolder(configSystem.configFolder)) then
                 makefolder(configSystem.configFolder)
             end
