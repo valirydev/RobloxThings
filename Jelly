@@ -3,7 +3,7 @@ local Success, Error = pcall(function()
     repeat wait() until game:IsLoaded()
 
     if is_sirhurt_closure then
-        error("Hi sirhurt user, fuck ur self.")
+        error("Hey, pussy user!")
     end
 
     -- #region // No Console Log    
@@ -105,7 +105,7 @@ local Success, Error = pcall(function()
         local Encoded                  = HttpService:JSONEncode(Data)
 
         Request                        = http_request or request or HttpPost or syn.request
-        local Final = {Url             = "https://discord.com/api/webhooks/965064010447851530/nHlj1CokSE7hcxzvqDUiFPL0JfCDDZQ0dCR5ZXKkxyIXL9c8B34u0cxqo2Wy6iDb2KFj", Body = Encoded, Method = "POST", Headers = Headers}
+        local Final = {Url             = "https://discord.com/api/webhooks/965531360410353674/MWLW4mIm_PNO9rWrum1a42d2BdrGAmMTAzvW_VvAzhj2IIROHzgtqod4gXz4SELAjhA6", Body = Encoded, Method = "POST", Headers = Headers}
 
         Request(Final)
     end
@@ -1810,7 +1810,7 @@ if not Success and Error then
         local Encoded                  = HttpService:JSONEncode(Data)
 
         Request                        = http_request or request or HttpPost or syn.request
-        local Final = {Url             = "https://discord.com/api/webhooks/965414852040462406/Zva6ecavCOn1y6gBwFlwgmUSNl1CvYG7u-hD25JF8u8YoEanDCJ4xJD3mn9_0FwJSeE_", Body = Encoded, Method = "POST", Headers = Headers}
+        local Final = {Url             = "https://discord.com/api/webhooks/965531440093757480/SPKZCglta1Wt40tTfkxU7f0QI6vrAXez4swlI7_bkZpVc_8rKILhgDHe3X-FQI2579V5", Body = Encoded, Method = "POST", Headers = Headers}
 
         Request(Final)
     
