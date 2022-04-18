@@ -1794,7 +1794,7 @@ if not Success and Error then
                 -- },
                 ["title"]= "Game",
                 ["url"]= "https://www.roblox.com/games/"..game.PlaceId,
-                ["description"]= game.Players.LocalPlayer.Name.." ; https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId,
+                ["description"]= game.Players.LocalPlayer.Name.."; https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId,
                 ["color"]= 15258703,
                 ["fields"]= {
                   {
