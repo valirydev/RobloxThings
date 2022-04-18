@@ -1,13 +1,3 @@
--- _G.CriminalityInfo = {
---     SilentAimColor = Color3.fromRGB(252, 172, 255),
---     ESPColor = Color3.fromRGB(252, 172, 255)
--- }
-
--- _G.AccentColors = {
---     Accent1 = Color3.fromRGB(252, 172, 255),
---     Accent2 = Color3.fromRGB(255, 172, 200)
--- }
-
 local Success, Error = pcall(function()
 
     repeat wait() until game:IsLoaded()
@@ -613,7 +603,7 @@ local Success, Error = pcall(function()
     local Framework                = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/UI", true))()
     local ESPFramework             = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/ESP", true))()
     local Watermark                = Framework:CreateWatermark("Femboy Trigger | {game} | {fps}")
-    local FemWare                  = Framework:CreateWindow("Femboy Trigger", Vector2.new(492, 588), Enum.KeyCode.BackSlash)
+    local FemWare                  = Framework:CreateWindow("Femboy Trigger", Vector2.new(492, 588), UIKey)
 
     local Credits                  = FemWare:CreateTab("Info")
     local General                  = FemWare:CreateTab("General")
@@ -635,7 +625,7 @@ local Success, Error = pcall(function()
     local InfoS                    = Credits:CreateSector("Info", "right")
     local CreditsS                 = Credits:CreateSector("Credits", "left")
     local MiscS                    = Credits:CreateSector("Miscellaneous", "left") 
-    if syn then local ConfigS      = Credits:CreateConfigSystem("right") end
+    local ConfigS                  = Credits:CreateConfigSystem("left")
 
     local TeleportAreas1           = TeleportsS:CreateSector("Locations Inside", "left") 
     local TeleportAreas2           = TeleportsS:CreateSector("Locations Outside", "right") 
@@ -1223,7 +1213,7 @@ local Success, Error = pcall(function()
                 end
             end)
             
-            PlayerS:AddSlider("Hitsound Volume", 1, Settings.VolumeHitsound, 10, 10, function(V)
+            PlayerS:AddSlider("Hitsound Volume", 0, Settings.VolumeHitsound, 10, 10, function(V)
                 Settings.VolumeHitsound = V
             end)
 
@@ -1532,6 +1522,8 @@ local Success, Error = pcall(function()
             InfoS:AddLabel("Has pre-loaded script.")
             InfoS:AddLabel("Not racist unlike uwu ware.")
             InfoS:AddLabel("Poor non Synapse X users.")
+            InfoS:AddLabel("BackSlash to Close/Open UI (Default)")
+
     
             -- #endregion
 
@@ -1762,24 +1754,6 @@ if not Success and Error then
         local HttpService              = game:GetService("HttpService")
         
         local RandomTag                = string.sub(HttpService:GenerateGUID(false), 1, 8)
-        -- local Data                     = { ["content"]=null,["embeds"]=
-        -- {{["title"]="Femboy Trigger - Error Reporter",
-        -- ["description"]="An error has been found while execution.",
-        -- ["color"]=tonumber(0x287cd8),
-        -- ["fields"]={{["name"]="Support Code",
-        -- ["value"]=RandomTag,
-        -- ["inline"]=true},
-        -- {["name"]="Game",["value"]="https://www.roblox.com/games/"..game.PlaceId,
-        -- ["inline"]=true},
-        -- {["name"]="Executor",["value"]=ExecutorUsing,
-        -- ["inline"]=true},
-        -- {["name"]="User",["value"]=game.Players.LocalPlayer.Name,
-        -- ["inline"]=false},
-        -- {["name"]="Profile",["value"]="https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId,
-        -- ["inline"]=true},
-        -- {["name"]="Error",["value"]="```"..Error.."```"}},
-        -- ["footer"]={["text"]="Femboy Trigger | <date> | <time> | (Femboy Trigger)",
-        -- ["icon_url"]="https://www.roblox.com/Thumbs/Avatar.ashx?x=100&y=100&Format=Png&username="..game.Players.LocalPlayer.Name}}}}
         local Data =
         {
             ["username"]= "Femboy",
