@@ -37,7 +37,7 @@ local Success, Error = pcall(function()
     -- #region // Variables
 
     local Settings                          = { GunMods = { NoRecoil = true, InstantEquip = true, Spread = true, AutoMode = false, SpreadAmount = 0 }, DownedChat = false, KillChat = false, DownedMSG = "", KillMSG = "", IsDead = true, AutoPickCash = false, AutoPickTools = false, AutoPickScrap = false, InfiniteStamina = true, NoJumpCooldown = true, NoFailLockpick = true, ShowChatLogs = true, NoFlashbang  = false, NoSmoke = false, UnlockDoorsNearby = true, OpenDoorsNearby = false, FullBright = true, CamFovToggled = true, CamFov = 70, InfinitePepperSpray = true, PepperSprayAura = true, WalkSpeed = {Enabled = true, Amount = 30}, JumpPower = {Enabled = true, Amount = 75}, NoBarbwire = false, NoFallDamage = false, NoRagdoll = false, WatermarkOn = false, ViewModel = { Enabled = true, Viewmodel = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Melees = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Guns = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.Plastic }, LeftArmOff = false }, CustomHitSound = 5043539486, VolumeHitsound = 1 };
-    local ESPSettings                       = { PlayerESP = { Enabled = true, TracersOn = false, BoxesOn = false, NamesOn = true, FaceCamOn = false }, ScrapESP = { Enabled = false, Distance = 2000, LegendaryOnly = true, RareOnly = true, GoodOnly = true, BadOnly = true }, SafeESP = { Enabled = false, Distance = 2000, BigOnly = true, SmallOnly = true }, RegisterESP = { Enabled = false, Distance = 500 } };
+    local ESPSettings                       = { PlayerESP = { Enabled = true, TracersOn = false, BoxesOn = false, NamesOn = true, FaceCamOn = false }, ScrapESP = { Enabled = false, Distance = 2000, LegendaryOnly = true, RareOnly = true, GoodOnly = true, BadOnly = true }, SafeESP = { Enabled = false, Distance = 2000, BigOnly = true, SmallOnly = true }, RegisterESP = { Enabled = false, Distance = 2000 } };
 
         -- #region Silent Aim
         local SilentSettings                    = { Main = { Enabled = true, TeamCheck = false, VisibleCheck = false, TargetPart = "Head" }, FOVSettings = { Visible = false, Radius = 360 } };
@@ -111,7 +111,7 @@ local Success, Error = pcall(function()
     end
 
     function JoinDiscord()  
-
+        setclipboard("https://discord.gg/vwxGwSn8bT")
     end
 
     function BypassAnticheat()
@@ -620,10 +620,10 @@ local Success, Error = pcall(function()
     local PlayerEspS               = Visuals:CreateSector("Player Visuals", "left")
     local ScrapEspS                = Visuals:CreateSector("Scrap Visuals", "right")
     local SafeEspS                 = Visuals:CreateSector("Safe Visuals", "left")
-    local RegisterEspS             = Visuals:CreateSector("Register Visuals", "right")
+    local RegisterEspS             = Visuals:CreateSector("Register Visuals", "left")
     local ViewmodelS               = Visuals:CreateSector("Viewmodel", "right")
 
-    local InfoS                    = Credits:CreateSector("Info", "right")
+    local InfoS                    = Credits:CreateSector("Settings", "right")
     local CreditsS                 = Credits:CreateSector("Credits", "left")
     local MiscS                    = Credits:CreateSector("Miscellaneous", "left") 
     local ConfigS                  = Credits:CreateConfigSystem("right")
@@ -1517,7 +1517,7 @@ local Success, Error = pcall(function()
             -- #region // Credits Sector
             CreditsS:AddSeperator("Creators")
             CreditsS:AddLabel("Sakuya - Founder")
-            CreditsS:AddLabel("hook - furry & webmaster")
+            CreditsS:AddLabel("hook - Fuckin furry ofc")
 
             InfoS:AddSeperator("Note")
             InfoS:AddLabel("Has pre-loaded script.")
