@@ -3,7 +3,7 @@ local Success, Error = pcall(function()
     repeat wait() until game:IsLoaded()
 
     if is_sirhurt_closure then
-        error("Hi sirhurt user, fuck ur self.")
+        error("Pussy user aha!")
     end
 
     -- #region // No Console Log    
@@ -1529,7 +1529,7 @@ local Success, Error = pcall(function()
             -- #endregion
 
             -- #region // Misc Sector
-            MiscS:AddButton("Discord", function() JoinDiscord() end)
+            MiscS:AddButton("Get Discord Link", function() JoinDiscord() end)
             MiscS:AddToggle("Toggle Watermark", Settings.WatermarkOn, function(V)
                 Watermark.Visible = V
                 Settings.WatermarkOn = V
