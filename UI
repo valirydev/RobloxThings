@@ -46,15 +46,15 @@ library.theme = {
 
 if not _G.CriminalityInfo then
     _G.CriminalityInfo = {
-        SilentAimColor = Color3.fromRGB(252, 172, 255),
-        ESPColor = Color3.fromRGB(252, 172, 255)
+    SilentAimColor = Color3.fromRGB(170, 255, 255),
+    ESPColor = Color3.fromRGB(170, 255, 255)
     }
 end
 
 if not _G.AccentColors then
     _G.AccentColors = {
-        Accent1 = Color3.fromRGB(252, 172, 255),
-        Accent2 = Color3.fromRGB(255, 172, 200)
+    Accent1 = Color3.fromRGB(170, 255, 255),
+    Accent2 = Color3.fromRGB(170, 255, 255)
     }
 end
 
