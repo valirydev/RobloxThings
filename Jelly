@@ -38,6 +38,7 @@ local Success, Error = pcall(function()
 
     local Settings                          = { GunMods = { NoRecoil = true, InstantEquip = true, Spread = true, AutoMode = false, SpreadAmount = 0 }, DownedChat = false, KillChat = false, DownedMSG = "", KillMSG = "", IsDead = true, AutoPickCash = false, AutoPickTools = false, AutoPickScrap = false, InfiniteStamina = true, NoJumpCooldown = true, NoFailLockpick = true, ShowChatLogs = true, NoFlashbang  = false, NoSmoke = false, UnlockDoorsNearby = true, OpenDoorsNearby = false, FullBright = true, CamFovToggled = true, CamFov = 70, InfinitePepperSpray = true, PepperSprayAura = true, WalkSpeed = {Enabled = true, Amount = 30}, JumpPower = {Enabled = true, Amount = 75}, NoBarbwire = false, NoFallDamage = false, NoRagdoll = false, WatermarkOn = false, ViewModel = { Enabled = true, Viewmodel = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Melees = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Guns = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.Plastic }, LeftArmOff = false }, CustomHitSound = 5043539486, VolumeHitsound = 1 };
     local ESPSettings                       = { PlayerESP = { Enabled = true, TracersOn = false, BoxesOn = false, NamesOn = true, FaceCamOn = false }, ScrapESP = { Enabled = false, Distance = 2000, LegendaryOnly = true, RareOnly = true, GoodOnly = true, BadOnly = true }, SafeESP = { Enabled = false, Distance = 2000, BigOnly = true, SmallOnly = true }, RegisterESP = { Enabled = false, Distance = 2000 } };
+    local CoolDowns                         = { AutoPickUps = { MoneyCooldown = false, ScrapCooldown = false, ToolCooldown = false } }
 
         -- #region Silent Aim
         local SilentSettings                    = { Main = { Enabled = true, TeamCheck = false, VisibleCheck = false, TargetPart = "Head" }, FOVSettings = { Visible = false, Radius = 360 } };
@@ -603,7 +604,7 @@ local Success, Error = pcall(function()
     local Framework                = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/UI", true))()
     local ESPFramework             = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/ESP", true))()
     local Watermark                = Framework:CreateWatermark("Femboy Trigger | {game} | {fps}")
-    if UIKey == nil then local UIKey = Enum.KeyCode.BackSlash end
+    if not UIKey then local UIKey = Enum.KeyCode.BackSlash end
     local FemWare                  = Framework:CreateWindow("Femboy Trigger", Vector2.new(492, 588), UIKey)
 
     local Credits                  = FemWare:CreateTab("Settings")
@@ -612,6 +613,7 @@ local Success, Error = pcall(function()
     local TeleportsS               = FemWare:CreateTab("Teleports")
 
     local MainS                    = General:CreateSector("Main", "left")
+    local MainSS                   = General:CreateSector("Auto", "right")
     local PepperS                  = General:CreateSector("Pepper", "right")   
     local GunModsS                 = General:CreateSector("Gun Mods", "left") 
     local PlayerS                  = General:CreateSector("Player", "right")
@@ -717,6 +719,71 @@ local Success, Error = pcall(function()
             
             return __newindex(t, k, v)
         end)
+        -- #endregion
+
+        -- #region Auto Pickup
+        coroutine.wrap(function()
+            game:GetService("RunService").RenderStepped:Connect(function()
+                if Settings.AutoPickScrap == true then
+                    for i, v in pairs(game:GetService("Workspace").Filter.SpawnedPiles:GetChildren()) do
+                        if Settings.IsDead == false then
+                            if (game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position - v:FindFirstChild("MeshPart").Position).Magnitude < 5 then
+                                if CoolDowns.AutoPickUps.ScrapCooldown == false then
+                                    CoolDowns.AutoPickUps.ScrapCooldown = true
+                                    game:GetService("ReplicatedStorage").Events.PIC_PU:FireServer(string.reverse(v:GetAttribute("zp")))
+
+                                    wait(1)
+
+                                    CoolDowns.AutoPickUps.ScrapCooldown = false
+                                end
+                            end
+                        end 
+                    end
+                end
+            end)
+        end)()
+
+        coroutine.wrap(function()
+            game:GetService("RunService").RenderStepped:Connect(function()
+                if Settings.AutoPickTools == true then
+                    for i, v in pairs(game:GetService("Workspace").Filter.SpawnedTools:GetChildren()) do
+                        if Settings.IsDead == false then
+                            if (game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position - v:FindFirstChildWhichIsA("MeshPart").Position).Magnitude < 5 then
+                                if CoolDowns.AutoPickUps.ToolCooldown == false then
+                                    CoolDowns.AutoPickUps.ToolCooldown = true
+                                    game:GetService("ReplicatedStorage").Events.PIC_TLO:FireServer(v:FindFirstChildWhichIsA("MeshPart"))
+
+                                    wait(1)
+
+                                    CoolDowns.AutoPickUps.ToolCooldown = false
+                                end
+                            end
+                        end
+                    end
+                end
+            end)
+        end)()
+
+        coroutine.wrap(function()
+            game:GetService("RunService").RenderStepped:Connect(function()
+                if Settings.AutoPickCash == true then
+                    for i, v in pairs(game:GetService("Workspace").Filter.SpawnedBread:GetChildren()) do
+                        if Settings.IsDead == false then
+                            if (game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position - v.Position).Magnitude < 5 then
+                                if CoolDowns.AutoPickUps.MoneyCooldown == false then
+                                    CoolDowns.AutoPickUps.MoneyCooldown = true
+                                    game:GetService("ReplicatedStorage").Events.CZDPZUS:FireServer(v)
+                                    
+                                    wait(1)
+
+                                    CoolDowns.AutoPickUps.MoneyCooldown = false
+                                end
+                            end
+                        end
+                    end
+                end
+            end)
+        end)()
         -- #endregion
 
         -- #region FlashBang
@@ -1088,7 +1155,7 @@ local Success, Error = pcall(function()
         -- #region // General Tab
 
             -- #region // Main Sector
-            MainS:AddSeperator("The Good Shit")
+            MainS:AddSeperator("The Good Boys")
 
             MainS:AddToggle("Infinite Stamina", Settings.InfiniteStamina, function(V)
                 Settings.InfiniteStamina = V
@@ -1126,6 +1193,20 @@ local Success, Error = pcall(function()
 
             MainS:AddToggle("Open Nearby Doors", Settings.OpenDoorsNearby, function(V)
                 Settings.OpenDoorsNearby = V
+            end)
+
+            MainSS:AddSeperator("Auto Pick")
+
+            MainSS:AddToggle("Auto Pickup Scrap", Settings.AutoPickScrap, function(V)
+                Settings.AutoPickScrap = V
+            end)
+
+            MainSS:AddToggle("Auto Pickup Tools", Settings.AutoPickTools, function(V)
+                Settings.AutoPickTools = V
+            end)
+
+            MainSS:AddToggle("Auto Pickup Cash", Settings.AutoPickCash, function(V)
+                Settings.AutoPickCash = V
             end)
 
             if syn then
