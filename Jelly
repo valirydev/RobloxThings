@@ -603,7 +603,7 @@ local Success, Error = pcall(function()
     local Framework                = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/UI", true))()
     local ESPFramework             = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/ESP", true))()
     local Watermark                = Framework:CreateWatermark("Femboy Trigger | {game} | {fps}")
-    if UIKey == nil then UIKey = Enum.KeyCode.BackSlash end
+    if UIKey == nil then local UIKey = Enum.KeyCode.BackSlash end
     local FemWare                  = Framework:CreateWindow("Femboy Trigger", Vector2.new(492, 588), UIKey)
 
     local Credits                  = FemWare:CreateTab("Settings")
