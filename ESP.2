@@ -245,6 +245,8 @@ function boxBase:Update()
 			if self.Player ~= nil then
 				self.Components.Health.Text = math.floor(self.Player.Character.Humanoid.Health + 0.5)  .. ":" .. self.Player.Character.Humanoid.MaxHealth
 				self.Components.Health.Color = color
+			else
+				self.Components.Health.Text = ""
 			end
 		else
 			self.Components.Health.Visible = false
