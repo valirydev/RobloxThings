@@ -22,7 +22,7 @@ library.theme = {
     fontsize = 15,
     titlesize = 18,
     font = Enum.Font.Code,
-    background = "rbxassetid://5553946656",
+    background = "rbxassetid://9441558491",
     tilesize = 90,
     cursor = true,
     cursorimg = "https://t0.rbxcdn.com/42f66da98c40252ee151326a82aab51f",
@@ -46,15 +46,15 @@ library.theme = {
 
 if not _G.CriminalityInfo then
     _G.CriminalityInfo = {
-    SilentAimColor = Color3.fromRGB(170, 255, 255),
-    ESPColor = Color3.fromRGB(170, 255, 255)
+        SilentAimColor = Color3.fromRGB(252, 172, 255),
+        ESPColor = Color3.fromRGB(252, 172, 255)
     }
 end
 
 if not _G.AccentColors then
     _G.AccentColors = {
-    Accent1 = Color3.fromRGB(170, 255, 255),
-    Accent2 = Color3.fromRGB(170, 255, 255)
+        Accent1 = Color3.fromRGB(252, 172, 255),
+        Accent2 = Color3.fromRGB(255, 172, 200)
     }
 end
 
