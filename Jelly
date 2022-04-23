@@ -603,7 +603,7 @@ local Success, Error = pcall(function()
 
     local Framework                = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/UI", true))()
     local ESPFramework             = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/ESP.2", true))()
-    local Watermark                = Framework:CreateWatermark("Femboy Trigger | {game} | {fps}")
+    local Watermark                = Framework:CreateWatermark("FemWare | {game} | {fps}")
     if not _G.ShortCut then _G.ShortCut = Enum.KeyCode.RightAlt end
     local FemWare                  = Framework:CreateWindow("FemWare 1.0.9b", Vector2.new(492, 588), _G.ShortCut)
 
@@ -655,25 +655,25 @@ local Success, Error = pcall(function()
         -- #region Admin Detector
         game.Players.PlayerAdded:Connect(function(AdminUserCheck)
             if AdminUserCheck.UserId == 68246168 or AdminUserCheck.UserId == 955294 or AdminUserCheck.UserId == 1095419 or AdminUserCheck.UserId == 50585425 or AdminUserCheck.UserId == 48405917 or AdminUserCheck.UserId == 9212846 or AdminUserCheck.UserId == 47352513 or AdminUserCheck.UserId == 48058122 then
-                StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Mod Alert\n"..AdminUserCheck.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
+                StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Mod Alert\n"..AdminUserCheck.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 120 })
             elseif AdminUserCheck.UserId == 42066711 or AdminUserCheck.UserId == 513615792 then
-                StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Contractors Alert\n"..AdminUserCheck.Name..", Is in the server"; Icon = "rbxassetid://8426126371"; Duration = 1 })
+                StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Contractors Alert\n"..AdminUserCheck.Name..", Is in the server"; Icon = "rbxassetid://8426126371"; Duration = 120 })
             elseif AdminUserCheck.UserId == 151691292 or AdminUserCheck.UserId == 92504899 or AdminUserCheck.UserId == 31967243 then
-                StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Devs Alert\n"..AdminUserCheck.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
+                StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Devs Alert\n"..AdminUserCheck.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 120 })
             elseif AdminUserCheck.UserId == 29761878 then
-                StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Owner Alert\nRvvz, Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
+                StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Owner Alert\nRvvz, Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 120 })
             end
         end)
 
         for i, v in pairs(game.Players:GetPlayers()) do
-            if v.UserId == 68246168 or v.UserId == 955294 or v.UserId == 1095419 or v.UserId == 50585425 or v.UserId == 48405917 or v.UserId == 9212846 or v.UserId == 47352513 or v.UserId == 48058122 then
-                StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Mod Alert\n"..v.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
+            if v.UserId == 68246168 or v.UserId == 955294 or v.UserId == 1095419 or v.UserId == 50585425 or v.UserId == 48405917 or v.UserId == 9212846 or v.UserId == 47352513 or v.UserId == 48058122 or v.UserId == 3246825984 then
+                StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Mod Alert\n"..v.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 120 })
             elseif v.UserId == 42066711 or v.UserId == 513615792 then
-                StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Contractors Alert\n"..v.Name..", Is in the server"; Icon = "rbxassetid://8426126371"; Duration = 1 })
+                StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Contractors Alert\n"..v.Name..", Is in the server"; Icon = "rbxassetid://8426126371"; Duration = 120 })
             elseif v.UserId == 151691292 or v.UserId == 92504899 or v.UserId == 31967243 then
-                StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Devs Alert\n"..v.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
+                StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Devs Alert\n"..v.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 120 })
             elseif v.UserId == 29761878 then
-                StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Owner Alert\nRvvz, Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
+                StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Owner Alert\nRvvz, Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 120 })
             end
         end
         -- #endregion
@@ -1657,7 +1657,7 @@ local Success, Error = pcall(function()
             -- #region // Credits Sector
             CreditsS:AddSeperator("Creators")
             CreditsS:AddLabel("Sakuya - Founder")
-            CreditsS:AddLabel("hook - Fuckin furry ofc")
+            CreditsS:AddLabel("hook - Fukin furry ofc")
 
             InfoS:AddSeperator("Configurations")
             InfoS:AddColorpicker("Accent 1", Framework.theme.accentcolor, function(V)
