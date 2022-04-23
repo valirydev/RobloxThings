@@ -46,7 +46,7 @@ local Success, Error = pcall(function()
 
         local Request                           = http_request or request or HttpPost or syn.request
         local Player                            = Players.LocalPlayer;
-        local Character                         = Player.Character;
+        local Character                         = Player.Character or Player.Character:Wait();
         local Mouse                             = Player:GetMouse()
         local Cam                               = workspace.CurrentCamera;
 
