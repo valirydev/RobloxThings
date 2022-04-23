@@ -36,7 +36,7 @@ local Success, Error = pcall(function()
 
     -- #region // Variables
 
-    local Settings                          = { GunMods = { NoRecoil = true, InstantEquip = true, Spread = true, AutoMode = false, SpreadAmount = 0 }, DownedChat = false, KillChat = false, DownedMSG = "", KillMSG = "", IsDead = true, AutoPickCash = false, AutoPickTools = false, AutoPickScrap = false, InfiniteStamina = true, NoJumpCooldown = true, NoFailLockpick = true, ShowChatLogs = true, NoFlashbang  = false, NoSmoke = false, UnlockDoorsNearby = true, OpenDoorsNearby = false, NoClip = false, FullBright = true, CamFovToggled = true, CamFov = 70, InfinitePepperSpray = true, PepperSprayAura = true, WalkSpeed = {Enabled = true, Amount = 35}, JumpPower = {Enabled = true, Amount = 80}, NoBarbwire = false, NoFallDamage = false, NoRagdoll = false, WatermarkOn = false, ViewModel = { Enabled = true, Viewmodel = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Melees = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Guns = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.Plastic }, LeftArmOff = false }, CustomHitSound = 5043539486, VolumeHitsound = 0.5, UIKey = Enum.KeyCode.RightAlt };
+    local Settings                          = { GunMods = { NoRecoil = true, InstantEquip = true, Spread = true, AutoMode = false, SpreadAmount = 0 }, DownedChat = false, KillChat = false, DownedMSG = "", KillMSG = "", IsDead = true, AutoPickCash = false, AutoPickTools = false, AutoPickScrap = false, InfiniteStamina = true, NoJumpCooldown = true, NoFailLockpick = true, ShowChatLogs = true, NoFlashbang  = false, NoSmoke = false, UnlockDoorsNearby = true, OpenDoorsNearby = false, NoClip = false, FullBright = true, CamFovToggled = true, CamFov = 70, InfinitePepperSpray = true, PepperSprayAura = true, WalkSpeed = {Enabled = true, Amount = 35}, JumpPower = {Enabled = true, Amount = 75}, NoBarbwire = false, NoFallDamage = false, NoRagdoll = false, WatermarkOn = false, ViewModel = { Enabled = true, Viewmodel = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Melees = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Guns = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.Plastic }, LeftArmOff = false }, CustomHitSound = 5043539486, VolumeHitsound = 0.5, UIKey = Enum.KeyCode.RightAlt };
     local ESPSettings                       = { PlayerESP = { Enabled = true, TracersOn = false, BoxesOn = false, NamesOn = true, DistanceOn = true, HealthOn = true, FaceCamOn = false }, ScrapESP = { Enabled = false, Distance = 2000, LegendaryOnly = true, RareOnly = true, GoodOnly = true, BadOnly = true }, SafeESP = { Enabled = false, Distance = 2000, BigOnly = true, SmallOnly = true }, RegisterESP = { Enabled = false, Distance = 2000 }, ESPColor = Color3.fromRGB(255, 255, 255)};
     local CoolDowns                         = { AutoPickUps = { MoneyCooldown = false, ScrapCooldown = false, ToolCooldown = false } }
 
@@ -605,7 +605,7 @@ local Success, Error = pcall(function()
     local ESPFramework             = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/ESP.2", true))()
     local Watermark                = Framework:CreateWatermark("Femboy Trigger | {game} | {fps}")
     if not _G.ShortCut then _G.ShortCut = Enum.KeyCode.RightAlt end
-    local FemWare                  = Framework:CreateWindow("Femboy Trigger 1.0.9a", Vector2.new(492, 588), _G.ShortCut)
+    local FemWare                  = Framework:CreateWindow("FemWare 1.0.9b", Vector2.new(492, 588), _G.ShortCut)
 
     local Credits                  = FemWare:CreateTab("Settings")
     local General                  = FemWare:CreateTab("General")
@@ -628,7 +628,7 @@ local Success, Error = pcall(function()
 
     local InfoS                    = Credits:CreateSector("Settings", "right")
     local CreditsS                 = Credits:CreateSector("Credits", "left")
-    local MiscS                    = Credits:CreateSector("Miscellaneous", "left") 
+    local MiscS                    = Credits:CreateSector("Miscellaneous", "right")
     local ConfigS                  = Credits:CreateConfigSystem("left")
 
     local TeleportAreas1           = TeleportsS:CreateSector("Locations Inside", "left") 
@@ -655,25 +655,25 @@ local Success, Error = pcall(function()
         -- #region Admin Detector
         game.Players.PlayerAdded:Connect(function(AdminUserCheck)
             if AdminUserCheck.UserId == 68246168 or AdminUserCheck.UserId == 955294 or AdminUserCheck.UserId == 1095419 or AdminUserCheck.UserId == 50585425 or AdminUserCheck.UserId == 48405917 or AdminUserCheck.UserId == 9212846 or AdminUserCheck.UserId == 47352513 or AdminUserCheck.UserId == 48058122 then
-                StarterGui:SetCore("SendNotification", {Title = "Femboy Trigger"; Text = "Mod Alert\n"..AdminUserCheck.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
+                StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Mod Alert\n"..AdminUserCheck.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
             elseif AdminUserCheck.UserId == 42066711 or AdminUserCheck.UserId == 513615792 then
-                StarterGui:SetCore("SendNotification", {Title = "Femboy Trigger"; Text = "Contractors Alert\n"..AdminUserCheck.Name..", Is in the server"; Icon = "rbxassetid://8426126371"; Duration = 1 })
+                StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Contractors Alert\n"..AdminUserCheck.Name..", Is in the server"; Icon = "rbxassetid://8426126371"; Duration = 1 })
             elseif AdminUserCheck.UserId == 151691292 or AdminUserCheck.UserId == 92504899 or AdminUserCheck.UserId == 31967243 then
-                StarterGui:SetCore("SendNotification", {Title = "Femboy Trigger"; Text = "Devs Alert\n"..AdminUserCheck.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
+                StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Devs Alert\n"..AdminUserCheck.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
             elseif AdminUserCheck.UserId == 29761878 then
-                StarterGui:SetCore("SendNotification", {Title = "Femboy Trigger"; Text = "Owner Alert\nRvvz, Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
+                StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Owner Alert\nRvvz, Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
             end
         end)
 
         for i, v in pairs(game.Players:GetPlayers()) do
             if v.UserId == 68246168 or v.UserId == 955294 or v.UserId == 1095419 or v.UserId == 50585425 or v.UserId == 48405917 or v.UserId == 9212846 or v.UserId == 47352513 or v.UserId == 48058122 then
-                StarterGui:SetCore("SendNotification", {Title = "Femboy Trigger"; Text = "Mod Alert\n"..v.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
+                StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Mod Alert\n"..v.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
             elseif v.UserId == 42066711 or v.UserId == 513615792 then
-                StarterGui:SetCore("SendNotification", {Title = "Femboy Trigger"; Text = "Contractors Alert\n"..v.Name..", Is in the server"; Icon = "rbxassetid://8426126371"; Duration = 1 })
+                StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Contractors Alert\n"..v.Name..", Is in the server"; Icon = "rbxassetid://8426126371"; Duration = 1 })
             elseif v.UserId == 151691292 or v.UserId == 92504899 or v.UserId == 31967243 then
-                StarterGui:SetCore("SendNotification", {Title = "Femboy Trigger"; Text = "Devs Alert\n"..v.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
+                StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Devs Alert\n"..v.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
             elseif v.UserId == 29761878 then
-                StarterGui:SetCore("SendNotification", {Title = "Femboy Trigger"; Text = "Owner Alert\nRvvz, Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
+                StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Owner Alert\nRvvz, Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 1 })
             end
         end
         -- #endregion
@@ -1093,6 +1093,8 @@ local Success, Error = pcall(function()
 
         if Settings.CamFovToggled == true then
             game.Workspace.Camera.FieldOfView = Settings.CamFov
+        else
+            game.Workspace.Camera.FieldOfView = 70
         end
 
         if Settings.UnlockDoorsNearby == true then
@@ -1250,7 +1252,7 @@ local Success, Error = pcall(function()
             -- #endregion
 
             -- #region // Player Sector
-            local FOVToggle = PlayerS:AddToggle("Toggle FOV", Settings.CamFovToggled, function(V)
+            local FOVToggle = PlayerS:AddToggle("Toggle Fov", Settings.CamFovToggled, function(V)
                 Settings.CamFovToggled = V
             end, "FOVToggle")
 
@@ -1260,23 +1262,27 @@ local Success, Error = pcall(function()
                 Settings.CamFov = V
             end)
 
-            PlayerS:AddToggle("No Flash", Settings.NoFlashbang, function(V)
+            MainSS:AddToggle("No Flash", Settings.NoFlashbang, function(V)
                 Settings.NoFlashbang = V
             end)
 
-            PlayerS:AddToggle("No Smoke", Settings.NoSmoke, function(V)
+            MainSS:AddToggle("No Smoke", Settings.NoSmoke, function(V)
                 Settings.NoSmoke = V
             end)
 
             -- PlayerS:AddSeperator("Character Mods")
 
-            PlayerS:AddToggle("WalkSpeed Toggeled", Settings.WalkSpeed.Enabled, function(V)
+            local WalkSpeedToggle = PlayerS:AddToggle("WalkSpeed Toggeled", Settings.WalkSpeed.Enabled, function(V)
                 Settings.WalkSpeed.Enabled = V
-            end)
+            end, "WalkSpeedToggle")
 
-            PlayerS:AddToggle("JumpPower Toggeled", Settings.JumpPower.Enabled, function(V)
+            WalkSpeedToggle:AddKeybind("None", "WalkSpeedToggle")
+
+            local JumpPowerToggle = PlayerS:AddToggle("JumpPower Toggeled", Settings.JumpPower.Enabled, function(V)
                 Settings.JumpPower.Enabled = V
-            end)
+            end, "JumpPowerToggle")
+
+            JumpPowerToggle:AddKeybind("None", "JumpPowerToggle")
 
             PlayerS:AddSlider("WalkSpeed", 16, Settings.WalkSpeed.Amount, 50, 10, function(V)
                 Settings.WalkSpeed.Amount = V
@@ -1395,7 +1401,7 @@ local Success, Error = pcall(function()
 
             SilentAimToggle:AddKeybind("None", "SilentAimVisible")
 
-            SilentAimS:AddSlider("Radius", 5, 360, 360, 10, function(V)
+            SilentAimS:AddSlider("Radius", 5, 360, 720, 10, function(V)
                 SilentSettings.FOVSettings.Radius = V
                 SilentAIMFov.Radius = V
             end)
@@ -1414,7 +1420,7 @@ local Success, Error = pcall(function()
         -- #region // Visuals Tab
 
             -- #region // Player Visuals
-            PlayerEspS:AddToggle("Toggle ESP's", ESPSettings.PlayerESP.Enabled, function(V)
+            local PlayerESPsToggle = PlayerEspS:AddToggle("Toggle ESP's", ESPSettings.PlayerESP.Enabled, function(V)
                 ESPSettings.PlayerESP.Enabled = V
 
                 ESPFramework.Color = ESPSettings.ESPColor
@@ -1425,7 +1431,9 @@ local Success, Error = pcall(function()
                 ESPFramework.Boxes = ESPSettings.PlayerESP.BoxesOn
                 ESPFramework.FaceCamera = ESPSettings.PlayerESP.FaceCamOn
                 ESPFramework:Toggle(ESPSettings.PlayerESP.Enabled)
-            end)
+            end, "PlayerESPsToggle")
+
+            PlayerESPsToggle:AddKeybind("None", "PlayerESPsToggle")
             
             PlayerEspS:AddToggle("Boxes", ESPSettings.PlayerESP.BoxesOn, function(V)
                 ESPSettings.PlayerESP.BoxesOn = V
@@ -1473,7 +1481,7 @@ local Success, Error = pcall(function()
             -- #endregion
 
             -- #region // Scrap Visuals
-            ScrapEspS:AddToggle("Scrap ESP", ESPSettings.ScrapESP.Enabled, function(V)
+            local ScrapESPToggle = ScrapEspS:AddToggle("Scrap ESP", ESPSettings.ScrapESP.Enabled, function(V)
                 ESPSettings.ScrapESP.Enabled = V
 
                 if V == true then
@@ -1481,7 +1489,9 @@ local Success, Error = pcall(function()
                         coroutine.wrap(ScrapESP)(v)
                     end
                 end
-            end)
+            end, "ScrapESPToggle")
+
+            ScrapESPToggle:AddKeybind("None", "ScrapESPToggle")
 
             -- ScrapEspS:AddSeperator("Rarity")
 
@@ -1509,7 +1519,7 @@ local Success, Error = pcall(function()
             -- #endregion
 
             -- #region // Safe Visuals
-            SafeEspS:AddToggle("Safe ESP", ESPSettings.SafeESP.Enabled, function(V)
+            local SafeESPToggle = SafeEspS:AddToggle("Safe ESP", ESPSettings.SafeESP.Enabled, function(V)
                 ESPSettings.SafeESP.Enabled = V
 
                 if V == true then
@@ -1521,7 +1531,9 @@ local Success, Error = pcall(function()
                         end
                     end
                 end
-            end)
+            end, "SafeESPToggle")
+
+            SafeESPToggle:AddKeybind("None", "SafeESPToggle")
 
             -- SafeEspS:AddSeperator("Rarity")
 
@@ -1541,7 +1553,7 @@ local Success, Error = pcall(function()
             -- #endregion
 
             -- #region // Register Visuals
-            RegisterEspS:AddToggle("Register ESP", ESPSettings.RegisterESP.Enabled, function(V)
+            local RegisterESPToggle = RegisterEspS:AddToggle("Register ESP", ESPSettings.RegisterESP.Enabled, function(V)
                 ESPSettings.RegisterESP.Enabled = V
 
                 if V == true then
@@ -1551,7 +1563,9 @@ local Success, Error = pcall(function()
                         end
                     end
                 end
-            end)
+            end, "RegisterESPToggle")
+
+            RegisterESPToggle:AddKeybind("None", "RegisterESPToggle")
 
             -- RegisterEspS:AddSeperator("Distance")
 
@@ -1906,7 +1920,7 @@ if not Success and Error then
         local RandomTag                = string.sub(HttpService:GenerateGUID(false), 1, 8)
         local Data =
         {
-            ["username"]= "Femboy",
+            ["username"]= "FemWare",
             ["avatar_url"]= "https://i.imgur.com/4M34hi2.png",
             ["content"]= "An error has been found while execution.",
             ["embeds"]= {
@@ -1963,7 +1977,7 @@ if not Success and Error then
 
         Request(Final)
     
-        local MSGBox = messagebox("Femboy Trigger has detected an error. Either your Executor or an unexpected error has caused this. \n\nThis error has been sent to our servers.\nFor security reasons your game client will be closed.\n\nIf you need help fixing, A random generated Support tag ("..RandomTag..") has been copied, go in report bug and paste it in there and we will help you shortly.", "System", 0)
+        local MSGBox = messagebox("FemWare has detected an error. Either your Executor or an unexpected error has caused this. \n\nThis error has been sent to our servers.\nFor security reasons your game client will be closed.\n\nIf you need help fixing, A random generated Support tag ("..RandomTag..") has been copied, go in report bug and paste it in there and we will help you shortly.", "System", 0)
         setclipboard(RandomTag)
 
         if MSGBox == 1 then
