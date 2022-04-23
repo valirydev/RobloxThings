@@ -36,12 +36,12 @@ local Success, Error = pcall(function()
 
     -- #region // Variables
 
-    local Settings                          = { GunMods = { NoRecoil = true, InstantEquip = true, Spread = true, AutoMode = false, SpreadAmount = 0 }, DownedChat = false, KillChat = false, DownedMSG = "", KillMSG = "", IsDead = true, AutoPickCash = false, AutoPickTools = false, AutoPickScrap = false, InfiniteStamina = true, NoJumpCooldown = true, NoFailLockpick = true, ShowChatLogs = true, NoFlashbang  = false, NoSmoke = false, UnlockDoorsNearby = true, OpenDoorsNearby = false, FullBright = true, CamFovToggled = true, CamFov = 70, InfinitePepperSpray = true, PepperSprayAura = true, WalkSpeed = {Enabled = true, Amount = 35}, JumpPower = {Enabled = true, Amount = 75}, NoBarbwire = false, NoFallDamage = false, NoRagdoll = false, WatermarkOn = false, ViewModel = { Enabled = true, Viewmodel = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Melees = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Guns = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.Plastic }, LeftArmOff = false }, CustomHitSound = 5043539486, VolumeHitsound = 0.5 };
-    local ESPSettings                       = { PlayerESP = { Enabled = true, TracersOn = false, BoxesOn = false, NamesOn = true, FaceCamOn = false }, ScrapESP = { Enabled = false, Distance = 2000, LegendaryOnly = true, RareOnly = true, GoodOnly = true, BadOnly = true }, SafeESP = { Enabled = false, Distance = 2000, BigOnly = true, SmallOnly = true }, RegisterESP = { Enabled = false, Distance = 2000 } };
+    local Settings                          = { GunMods = { NoRecoil = true, InstantEquip = true, Spread = true, AutoMode = false, SpreadAmount = 0 }, DownedChat = false, KillChat = false, DownedMSG = "", KillMSG = "", IsDead = true, AutoPickCash = false, AutoPickTools = false, AutoPickScrap = false, InfiniteStamina = true, NoJumpCooldown = true, NoFailLockpick = true, ShowChatLogs = true, NoFlashbang  = false, NoSmoke = false, UnlockDoorsNearby = true, OpenDoorsNearby = false, NoClip = false, FullBright = true, CamFovToggled = true, CamFov = 70, InfinitePepperSpray = true, PepperSprayAura = true, WalkSpeed = {Enabled = true, Amount = 35}, JumpPower = {Enabled = true, Amount = 80}, NoBarbwire = false, NoFallDamage = false, NoRagdoll = false, WatermarkOn = false, ViewModel = { Enabled = true, Viewmodel = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Melees = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Guns = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.Plastic }, LeftArmOff = false }, CustomHitSound = 5043539486, VolumeHitsound = 0.5, UIKey = Enum.KeyCode.RightAlt };
+    local ESPSettings                       = { PlayerESP = { Enabled = true, TracersOn = false, BoxesOn = false, NamesOn = true, DistanceOn = true, HealthOn = true, FaceCamOn = false }, ScrapESP = { Enabled = false, Distance = 2000, LegendaryOnly = true, RareOnly = true, GoodOnly = true, BadOnly = true }, SafeESP = { Enabled = false, Distance = 2000, BigOnly = true, SmallOnly = true }, RegisterESP = { Enabled = false, Distance = 2000 }, ESPColor = Color3.fromRGB(255, 255, 255)};
     local CoolDowns                         = { AutoPickUps = { MoneyCooldown = false, ScrapCooldown = false, ToolCooldown = false } }
 
         -- #region Silent Aim
-        local SilentSettings                    = { Main = { Enabled = true, TeamCheck = false, VisibleCheck = false, TargetPart = "Head" }, FOVSettings = { Visible = false, Radius = 360 } };
+        local SilentSettings                    = { Main = { Enabled = true, TeamCheck = false, VisibleCheck = false, TargetPart = "Head" }, FOVSettings = { Visible = false, Radius = 360 }, SilentAimColor = Color3.fromRGB(255, 255, 255)};
         local ValidTargetParts                  = {"Head", "Torso"};
 
         local Request                           = http_request or request or HttpPost or syn.request
@@ -602,22 +602,23 @@ local Success, Error = pcall(function()
     -- #region // Objects
 
     local Framework                = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/UI", true))()
-    local ESPFramework             = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/ESP", true))()
+    local ESPFramework             = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/ESP.2", true))()
     local Watermark                = Framework:CreateWatermark("Femboy Trigger | {game} | {fps}")
-    if not _G.ShortCut then _G.ShortCut = Enum.KeyCode.BackSlash end
-    local FemWare                  = Framework:CreateWindow("Femboy Trigger 1.0.8", Vector2.new(492, 588), _G.ShortCut)
+    if not _G.ShortCut then _G.ShortCut = Enum.KeyCode.RightAlt end
+    local FemWare                  = Framework:CreateWindow("Femboy Trigger 1.0.9", Vector2.new(492, 588), _G.ShortCut)
 
     local Credits                  = FemWare:CreateTab("Settings")
     local General                  = FemWare:CreateTab("General")
+    local Extra                    = FemWare:CreateTab("Extra")
     local Visuals                  = FemWare:CreateTab("Visuals")
     local TeleportsS               = FemWare:CreateTab("Teleports")
 
     local MainS                    = General:CreateSector("Main", "left")
-    local MainSS                   = General:CreateSector("Auto", "right")
-    local PepperS                  = General:CreateSector("Pepper", "right")   
-    local GunModsS                 = General:CreateSector("Gun Mods", "left") 
+    local MainSS                   = General:CreateSector("Secondary", "right")
+    local GunModsS                 = General:CreateSector("Gun Mods", "right")
     local PlayerS                  = General:CreateSector("Player", "right")
-    local SilentAimS               = General:CreateSector("Silent Aim", "left")
+    local CustomS                  = Extra:CreateSector("Audio", "right")
+    -- local SilentAimS               = General:CreateSector("Silent Aim", "left")
 
     local PlayerEspS               = Visuals:CreateSector("Player Visuals", "left")
     local ScrapEspS                = Visuals:CreateSector("Scrap Visuals", "right")
@@ -628,7 +629,7 @@ local Success, Error = pcall(function()
     local InfoS                    = Credits:CreateSector("Settings", "right")
     local CreditsS                 = Credits:CreateSector("Credits", "left")
     local MiscS                    = Credits:CreateSector("Miscellaneous", "left") 
-    local ConfigS                  = Credits:CreateConfigSystem("right")
+    local ConfigS                  = Credits:CreateConfigSystem("left")
 
     local TeleportAreas1           = TeleportsS:CreateSector("Locations Inside", "left") 
     local TeleportAreas2           = TeleportsS:CreateSector("Locations Outside", "right") 
@@ -644,7 +645,7 @@ local Success, Error = pcall(function()
     SilentAIMFov.Visible           = false
     SilentAIMFov.ZIndex            = 999
     SilentAIMFov.Transparency      = 1
-    SilentAIMFov.Color             = _G.CriminalityInfo.SilentAimColor
+    SilentAIMFov.Color             = SilentSettings.SilentAimColor
     SilentSettings.Visible         = false
 
     -- #endregion
@@ -940,7 +941,7 @@ local Success, Error = pcall(function()
             game:GetService("RunService").RenderStepped:Connect(function()
                 if SilentSettings.FOVSettings.Visible then 
                     SilentAIMFov.Visible        = SilentSettings.FOVSettings.Visible
-                    SilentAIMFov.Color          = _G.CriminalityInfo.SilentAimColor
+                    SilentAIMFov.Color          = SilentSettings.SilentAimColor
                     SilentAIMFov.Position       = GetMousePosition() + Vector2.new(0, 36)
                 end
             end)
@@ -1118,6 +1119,24 @@ local Success, Error = pcall(function()
             end
         end
 
+        -- if Settings.NoClip == true then
+        --     for _, v in pairs(game:GetService("Workspace").Map.Doors:GetChildren()) do
+        --         if v.ClassName == "Part" then
+        --             if v:FindFirstChild("DoorBase") or v:FindFirstChild("DoorA") or v:FindFirstChild("DoorB") or v:FindFirstChild("DoorC") or v:FindFirstChild("DoorD") then
+        --             v.CanCollide = false
+        --             end
+        --         end
+        --     end
+        -- else
+            
+        -- end
+
+        -- if Settings.WallBang == true then
+        --     game:service[[Workspace]]:FindFirstChild('Map'):FindFirstChild('Parts'):FindFirstChild('M_Parts').Parent = game:service[[Workspace]]:FindFirstChild('Characters')
+        -- else
+        --     game:service[[Workspace]]:FindFirstChild('Map'):FindFirstChild('Parts'):FindFirstChild('M_Parts').Parent = nil
+        -- end
+
         if Settings.IsDead == false then
                 if Player.Character:FindFirstChild("Pepper-spray") then
                     if Settings.InfinitePepperSpray == true then
@@ -1195,17 +1214,21 @@ local Success, Error = pcall(function()
                 Settings.OpenDoorsNearby = V
             end)
 
+            -- MainS:AddToggle("NoClip Doors", Settings.NoClip, function(V)
+            --     Settings.NoClip = V
+            -- end)
+
             MainSS:AddSeperator("Auto Pick")
 
-            MainSS:AddToggle("Auto Pickup Scrap", Settings.AutoPickScrap, function(V)
+            MainSS:AddToggle("Auto Scrap", Settings.AutoPickScrap, function(V)
                 Settings.AutoPickScrap = V
             end)
 
-            MainSS:AddToggle("Auto Pickup Tools", Settings.AutoPickTools, function(V)
+            MainSS:AddToggle("Auto Tools", Settings.AutoPickTools, function(V)
                 Settings.AutoPickTools = V
             end)
 
-            MainSS:AddToggle("Auto Pickup Cash", Settings.AutoPickCash, function(V)
+            MainSS:AddToggle("Auto Cash", Settings.AutoPickCash, function(V)
                 Settings.AutoPickCash = V
             end)
 
@@ -1245,7 +1268,7 @@ local Success, Error = pcall(function()
                 Settings.NoSmoke = V
             end)
 
-            PlayerS:AddSeperator("Character Stuff")
+            PlayerS:AddSeperator("Character Mods")
 
             PlayerS:AddToggle("WalkSpeed Toggeled", Settings.WalkSpeed.Enabled, function(V)
                 Settings.WalkSpeed.Enabled = V
@@ -1255,17 +1278,17 @@ local Success, Error = pcall(function()
                 Settings.JumpPower.Enabled = V
             end)
 
-            PlayerS:AddSlider("WalkSpeed", 16, Settings.WalkSpeed.Amount, 35, 10, function(V)
+            PlayerS:AddSlider("WalkSpeed", 16, Settings.WalkSpeed.Amount, 50, 10, function(V)
                 Settings.WalkSpeed.Amount = V
             end)
 
-            PlayerS:AddSlider("JumpPower", 50, Settings.JumpPower.Amount, 75, 10, function(V)
+            PlayerS:AddSlider("JumpPower", 50, Settings.JumpPower.Amount, 100, 10, function(V)
                 Settings.JumpPower.Amount = V
             end)
 
-            PlayerS:AddSeperator("Customization")
+            CustomS:AddSeperator("Customization")
 
-            PlayerS:AddDropdown("Hit Sounds", {"Boink", "TF2", "Rust", "CSGO", "Hitmarker"}, "Rust", false, function(V)
+            CustomS:AddDropdown("Hit Sounds", {"Boink", "TF2", "Rust", "CSGO", "Hitmarker"}, "Rust", false, function(V)
                 local SelectedId = nil
 
                 if V == "Boink" then
@@ -1295,11 +1318,11 @@ local Success, Error = pcall(function()
                 end
             end)
             
-            PlayerS:AddSlider("Hitsound Volume", 0, Settings.VolumeHitsound, 10, 10, function(V)
+            CustomS:AddSlider("Hitsound Volume", 0, Settings.VolumeHitsound, 10, 10, function(V)
                 Settings.VolumeHitsound = V
             end)
 
-            PlayerS:AddButton("Remove Textures", function()
+            CustomS:AddButton("Remove Textures", function()
                 for _,v in pairs(workspace:GetDescendants()) do
                     if v.ClassName == "Part" or v.ClassName == "SpawnLocation" or v.ClassName == "WedgePart" or v.ClassName == "Terrain" or v.ClassName == "MeshPart" then
                         v.Material = "Plastic"
@@ -1337,19 +1360,19 @@ local Success, Error = pcall(function()
             -- #endregion
 
             -- #region // Pepper Sector
-            PepperS:AddToggle("Infinite Pepper Spray", Settings.InfinitePepperSpray, function(V)
+            MainSS:AddToggle("Infinite Pepper Spray", Settings.InfinitePepperSpray, function(V)
                 Settings.InfinitePepperSpray = V
             end)
 
-            PepperS:AddToggle("Pepper Spray Aura", Settings.PepperSprayAura, function(V)
+            MainSS:AddToggle("Pepper Spray Aura", Settings.PepperSprayAura, function(V)
                 Settings.PepperSprayAura = V
             end)
             -- #endregion
 
             -- #region // Silent Aim
-            SilentAimS:AddSeperator("- Silent Aim Settings -")
+            -- SilentAimS:AddSeperator("- Silent Aim Settings -")
 
-            local SilentToggle = SilentAimS:AddToggle("Enabled", true, function(V)
+            local SilentToggle = MainS:AddToggle("Silent Aim", true, function(V)
                 SilentSettings.Main.Enabled = V
             end, "SilentToggle")
 
@@ -1359,22 +1382,30 @@ local Success, Error = pcall(function()
             --     SilentSettings.Main.VisibleCheck = V
             -- end)
 
-            SilentAimS:AddDropdown("Hit Part", {"Head", "Torso", "Random"}, "Head", false, function(V)
+            MainS:AddDropdown("Hit Part", {"Head", "Torso", "Random"}, "Head", false, function(V)
                 SilentSettings.Main.TargetPart = V
             end)
 
-            SilentAimS:AddSeperator("- Fov Settings -")
+            -- SilentAimS:AddSeperator("- Fov Settings -")
 
-            local SilentAimToggle = SilentAimS:AddToggle("Visible", false, function(V)
+            local SilentAimToggle = MainS:AddToggle("Silent Aim Fov", false, function(V)
                 SilentSettings.FOVSettings.Visible = V
                 SilentAIMFov.Visible = V
             end, "SilentAimVisible")
 
             SilentAimToggle:AddKeybind("None", "SilentAimVisible")
 
-            SilentAimS:AddSlider("Radius", 5, 360, 360, 10, function(V)
+            MainS:AddSlider("Radius", 5, 360, 360, 10, function(V)
                 SilentSettings.FOVSettings.Radius = V
                 SilentAIMFov.Radius = V
+            end)
+
+            MainS:AddButton("Melee God Mode", function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/Tobias020108Back/YBA-AUT/main/Criminality-Semi-Godmode.lua", true))()
+            end)
+
+            MainS:AddButton("WallBang", function()
+                game:service[[Workspace]]:FindFirstChild('Map'):FindFirstChild('Parts'):FindFirstChild('M_Parts').Parent = game:service[[Workspace]]:FindFirstChild('Characters')
             end)
             -- #endregion
 
@@ -1386,30 +1417,42 @@ local Success, Error = pcall(function()
             PlayerEspS:AddToggle("Toggle ESP's", ESPSettings.PlayerESP.Enabled, function(V)
                 ESPSettings.PlayerESP.Enabled = V
 
-                ESPFramework.Color = _G.CriminalityInfo.ESPColor
+                ESPFramework.Color = ESPSettings.ESPColor
                 ESPFramework.Tracers = ESPSettings.PlayerESP.TracersOn
                 ESPFramework.Names = ESPSettings.PlayerESP.NamesOn
+                ESPFramework.Distance = ESPSettings.PlayerESP.DistanceOn
+                ESPFramework.Health = ESPSettings.PlayerESP.HealthOn
                 ESPFramework.Boxes = ESPSettings.PlayerESP.BoxesOn
                 ESPFramework.FaceCamera = ESPSettings.PlayerESP.FaceCamOn
                 ESPFramework:Toggle(ESPSettings.PlayerESP.Enabled)
             end)
             
-            PlayerEspS:AddToggle("Toggle Boxes", ESPSettings.PlayerESP.BoxesOn, function(V)
+            PlayerEspS:AddToggle("Boxes", ESPSettings.PlayerESP.BoxesOn, function(V)
                 ESPSettings.PlayerESP.BoxesOn = V
                 ESPFramework.Boxes = ESPSettings.PlayerESP.BoxesOn
             end)
 
-            PlayerEspS:AddToggle("Toggle Tracers", ESPSettings.PlayerESP.TracersOn, function(V)
+            PlayerEspS:AddToggle("Tracers", ESPSettings.PlayerESP.TracersOn, function(V)
                 ESPSettings.PlayerESP.TracersOn = V
                 ESPFramework.Tracers = ESPSettings.PlayerESP.TracersOn
             end)
 
-            PlayerEspS:AddToggle("Toggle Name", ESPSettings.PlayerESP.NamesOn, function(V)
+            PlayerEspS:AddToggle("Name", ESPSettings.PlayerESP.NamesOn, function(V)
                 ESPSettings.PlayerESP.NamesOn = V
                 ESPFramework.Names = ESPSettings.PlayerESP.NamesOn
             end)
 
-            PlayerEspS:AddToggle("Toggle Face Cam", ESPSettings.PlayerESP.FaceCamOn, function(V)
+            PlayerEspS:AddToggle("Distance", ESPSettings.PlayerESP.DistanceOn, function(V)
+                ESPSettings.PlayerESP.DistanceOn = V
+                ESPFramework.Distance = ESPSettings.PlayerESP.DistanceOn
+            end)
+
+            PlayerEspS:AddToggle("Health", ESPSettings.PlayerESP.HealthOn, function(V)
+                ESPSettings.PlayerESP.HealthOn = V
+                ESPFramework.Health = ESPSettings.PlayerESP.HealthOn
+            end)
+
+            PlayerEspS:AddToggle("Face Cam", ESPSettings.PlayerESP.FaceCamOn, function(V)
                 ESPSettings.PlayerESP.FaceCamOn = V
                 ESPFramework.FaceCamera = ESPSettings.PlayerESP.FaceCamOn
             end)
@@ -1602,11 +1645,32 @@ local Success, Error = pcall(function()
             CreditsS:AddLabel("Sakuya - Founder")
             CreditsS:AddLabel("hook - Fuckin furry ofc")
 
+            InfoS:AddSeperator("Configurations")
+            InfoS:AddColorpicker("Accent 1", Framework.theme.accentcolor, function(V)
+                Framework.theme.accentcolor = V
+            end)
+            InfoS:AddColorpicker("Accent 2", Framework.theme.accentcolor2, function(V)
+                Framework.theme.accentcolor2 = V
+            end)
+            InfoS:AddColorpicker("ESP Color", ESPFramework.Color, function(V)
+                ESPFramework.Color = V
+            end)
+            InfoS:AddColorpicker("Silent Aim Color", SilentSettings.SilentAimColor, function(V)
+                SilentAIMFov.Color = V
+                SilentSettings.SilentAimColor = V
+            end)
+            -- local UserIToggle = InfoS:AddToggle("UI ShortKey", Settings.UIKey, function(V)
+            --     Settings.UIKey = V
+            --     print(Settings.UIKey)
+            -- end, "UserIToggle")
+
+            -- UserIToggle:AddKeybind("None", "UserIToggle")
+
             InfoS:AddSeperator("Note")
             InfoS:AddLabel("Has pre-loaded script.")
             InfoS:AddLabel("Not racist unlike uwu ware.")
-            InfoS:AddLabel("Poor non Synapse X users.")
-            if _G.ShortCut == Enum.KeyCode.BackSlash then InfoS:AddLabel("BackSlash to Close/Open UI") end
+            -- InfoS:AddLabel("Poor non Synapse X users.")
+            if _G.ShortCut == Enum.KeyCode.RightAlt then InfoS:AddLabel("RightAlt to Close/Open UI") end
 
     
             -- #endregion
