@@ -46,7 +46,7 @@ local Success, Error = pcall(function()
 
         local Request                           = http_request or request or HttpPost or syn.request
         local Player                            = Players.LocalPlayer;
-        local Character                         = Player.Character or Player.Character:Wait();
+        local Character                         = Player.Character;
         local Mouse                             = Player:GetMouse()
         local Cam                               = workspace.CurrentCamera;
 
@@ -1980,6 +1980,8 @@ if not Success and Error then
         local MSGBox = messagebox("FemWare has detected an error. Either your Executor or an unexpected error has caused this. \n\nThis error has been sent to our servers.\nFor security reasons your game client will be closed.\n\nIf you need help fixing, A random generated Support tag ("..RandomTag..") has been copied, go in report bug and paste it in there and we will help you shortly.", "System", 0)
         setclipboard(RandomTag)
 
-        
+        if MSGBox == 1 then
+            game:Shutdown()
+        end
     end)
 end
