@@ -36,7 +36,7 @@ local Success, Error = pcall(function()
 
     -- #region // Variables
 
-    local Settings                          = { GunMods = { NoRecoil = true, InstantEquip = true, Spread = true, AutoMode = false, SpreadAmount = 0 }, DownedChat = false, KillChat = false, DownedMSG = "", KillMSG = "", IsDead = true, AutoPickCash = false, AutoPickTools = false, AutoPickScrap = false, InfiniteStamina = true, NoJumpCooldown = true, NoFailLockpick = true, ShowChatLogs = true, NoFlashbang  = false, NoSmoke = false, UnlockDoorsNearby = true, OpenDoorsNearby = false, FullBright = true, CamFovToggled = true, CamFov = 70, InfinitePepperSpray = true, PepperSprayAura = true, WalkSpeed = {Enabled = true, Amount = 30}, JumpPower = {Enabled = true, Amount = 75}, NoBarbwire = false, NoFallDamage = false, NoRagdoll = false, WatermarkOn = false, ViewModel = { Enabled = true, Viewmodel = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Melees = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Guns = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.Plastic }, LeftArmOff = false }, CustomHitSound = 5043539486, VolumeHitsound = 0.5 };
+    local Settings                          = { GunMods = { NoRecoil = true, InstantEquip = true, Spread = true, AutoMode = false, SpreadAmount = 0 }, DownedChat = false, KillChat = false, DownedMSG = "", KillMSG = "", IsDead = true, AutoPickCash = false, AutoPickTools = false, AutoPickScrap = false, InfiniteStamina = true, NoJumpCooldown = true, NoFailLockpick = true, ShowChatLogs = true, NoFlashbang  = false, NoSmoke = false, UnlockDoorsNearby = true, OpenDoorsNearby = false, FullBright = true, CamFovToggled = true, CamFov = 70, InfinitePepperSpray = true, PepperSprayAura = true, WalkSpeed = {Enabled = true, Amount = 35}, JumpPower = {Enabled = true, Amount = 75}, NoBarbwire = false, NoFallDamage = false, NoRagdoll = false, WatermarkOn = false, ViewModel = { Enabled = true, Viewmodel = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Melees = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Guns = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.Plastic }, LeftArmOff = false }, CustomHitSound = 5043539486, VolumeHitsound = 0.5 };
     local ESPSettings                       = { PlayerESP = { Enabled = true, TracersOn = false, BoxesOn = false, NamesOn = true, FaceCamOn = false }, ScrapESP = { Enabled = false, Distance = 2000, LegendaryOnly = true, RareOnly = true, GoodOnly = true, BadOnly = true }, SafeESP = { Enabled = false, Distance = 2000, BigOnly = true, SmallOnly = true }, RegisterESP = { Enabled = false, Distance = 2000 } };
     local CoolDowns                         = { AutoPickUps = { MoneyCooldown = false, ScrapCooldown = false, ToolCooldown = false } }
 
@@ -605,7 +605,7 @@ local Success, Error = pcall(function()
     local ESPFramework             = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/ESP", true))()
     local Watermark                = Framework:CreateWatermark("Femboy Trigger | {game} | {fps}")
     if not _G.ShortCut then _G.ShortCut = Enum.KeyCode.BackSlash end
-    local FemWare                  = Framework:CreateWindow("Femboy Trigger", Vector2.new(492, 588), _G.ShortCut)
+    local FemWare                  = Framework:CreateWindow("Femboy Trigger 1.0.8", Vector2.new(492, 588), _G.ShortCut)
 
     local Credits                  = FemWare:CreateTab("Settings")
     local General                  = FemWare:CreateTab("General")
@@ -1231,7 +1231,7 @@ local Success, Error = pcall(function()
                 Settings.CamFovToggled = V
             end, "FOVToggle")
 
-            -- FOVToggle:AddKeybind(Enum.KeyCode.RightAlt, "FOVToggle")
+            FOVToggle:AddKeybind("None", "FOVToggle")
 
             PlayerS:AddSlider("Field Of View", 70, Settings.CamFov, 120, 10, function(V)
                 Settings.CamFov = V
@@ -1255,7 +1255,7 @@ local Success, Error = pcall(function()
                 Settings.JumpPower.Enabled = V
             end)
 
-            PlayerS:AddSlider("WalkSpeed", 16, Settings.WalkSpeed.Amount, 30, 10, function(V)
+            PlayerS:AddSlider("WalkSpeed", 16, Settings.WalkSpeed.Amount, 35, 10, function(V)
                 Settings.WalkSpeed.Amount = V
             end)
 
@@ -1353,11 +1353,11 @@ local Success, Error = pcall(function()
                 SilentSettings.Main.Enabled = V
             end, "SilentToggle")
 
-            -- SilentToggle:AddKeybind(Enum.KeyCode.LeftAlt, "SilentToggle")
+            SilentToggle:AddKeybind("None", "SilentToggle")
 
-            SilentAimS:AddToggle("Visible Check", false, function(V)
-                SilentSettings.Main.VisibleCheck = V
-            end)
+            -- SilentAimS:AddToggle("Visible Check", false, function(V)
+            --     SilentSettings.Main.VisibleCheck = V
+            -- end)
 
             SilentAimS:AddDropdown("Hit Part", {"Head", "Torso", "Random"}, "Head", false, function(V)
                 SilentSettings.Main.TargetPart = V
@@ -1365,10 +1365,12 @@ local Success, Error = pcall(function()
 
             SilentAimS:AddSeperator("- Fov Settings -")
 
-            SilentAimS:AddToggle("Visible", false, function(V)
+            local SilentAimToggle = SilentAimS:AddToggle("Visible", false, function(V)
                 SilentSettings.FOVSettings.Visible = V
                 SilentAIMFov.Visible = V
-            end)
+            end, "SilentAimVisible")
+
+            SilentAimToggle:AddKeybind("None", "SilentAimVisible")
 
             SilentAimS:AddSlider("Radius", 5, 360, 360, 10, function(V)
                 SilentSettings.FOVSettings.Radius = V
