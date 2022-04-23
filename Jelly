@@ -2,10 +2,6 @@ local Success, Error = pcall(function()
 
     repeat wait() until game:IsLoaded()
 
-    if is_sirhurt_closure then
-        error("Hey, pussy user!")
-    end
-
     -- #region // No Console Log    
     game:GetService("RunService").RenderStepped:Connect(function()
         for _, Connection in next, getconnections(game:GetService("ScriptContext").Error) do
@@ -36,7 +32,7 @@ local Success, Error = pcall(function()
 
     -- #region // Variables
 
-    local Settings                          = { GunMods = { NoRecoil = true, InstantEquip = true, Spread = true, AutoMode = false, SpreadAmount = 0 }, DownedChat = false, KillChat = false, DownedMSG = "", KillMSG = "", IsDead = true, AutoPickCash = false, AutoPickTools = false, AutoPickScrap = false, InfiniteStamina = true, NoJumpCooldown = true, NoFailLockpick = true, ShowChatLogs = true, NoFlashbang  = false, NoSmoke = false, UnlockDoorsNearby = true, OpenDoorsNearby = false, NoClip = false, FullBright = true, CamFovToggled = true, CamFov = 70, InfinitePepperSpray = true, PepperSprayAura = true, WalkSpeed = {Enabled = true, Amount = 35}, JumpPower = {Enabled = true, Amount = 75}, NoBarbwire = false, NoFallDamage = false, NoRagdoll = false, WatermarkOn = false, ViewModel = { Enabled = true, Viewmodel = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Melees = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Guns = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.Plastic }, LeftArmOff = false }, CustomHitSound = 5043539486, VolumeHitsound = 0.5, UIKey = Enum.KeyCode.RightAlt };
+    local Settings                          = { GunMods = { NoRecoil = true, InstantEquip = true, Spread = true, AutoMode = false, SpreadAmount = 0 }, DownedChat = false, KillChat = false, DownedMSG = "", KillMSG = "", IsDead = true, AutoPickCash = false, AutoPickTools = false, AutoPickScrap = false, InfiniteStamina = true, NoJumpCooldown = true, NoFailLockpick = true, ShowChatLogs = true, NoFlashbang  = false, NoSmoke = false, UnlockDoorsNearby = true, OpenDoorsNearby = false, NoClip = false, FullBright = true, CamFovToggled = true, CamFov = 70, InfinitePepperSpray = true, PepperSprayAura = true, WalkSpeed = {Enabled = true, Amount = 30}, JumpPower = {Enabled = true, Amount = 75}, NoBarbwire = false, NoFallDamage = false, NoRagdoll = false, WatermarkOn = false, ViewModel = { Enabled = true, Viewmodel = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Melees = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Guns = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.Plastic }, LeftArmOff = false }, CustomHitSound = 5043539486, VolumeHitsound = 0.5, UIKey = Enum.KeyCode.RightAlt };
     local ESPSettings                       = { PlayerESP = { Enabled = true, TracersOn = false, BoxesOn = false, NamesOn = true, DistanceOn = true, HealthOn = true, FaceCamOn = false }, ScrapESP = { Enabled = false, Distance = 2000, LegendaryOnly = true, RareOnly = true, GoodOnly = true, BadOnly = true }, SafeESP = { Enabled = false, Distance = 2000, BigOnly = true, SmallOnly = true }, RegisterESP = { Enabled = false, Distance = 2000 }, ESPColor = Color3.fromRGB(255, 255, 255)};
     local CoolDowns                         = { AutoPickUps = { MoneyCooldown = false, ScrapCooldown = false, ToolCooldown = false } }
 
