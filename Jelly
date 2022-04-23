@@ -605,7 +605,7 @@ local Success, Error = pcall(function()
     local ESPFramework             = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/ESP.2", true))()
     local Watermark                = Framework:CreateWatermark("Femboy Trigger | {game} | {fps}")
     if not _G.ShortCut then _G.ShortCut = Enum.KeyCode.RightAlt end
-    local FemWare                  = Framework:CreateWindow("Femboy Trigger 1.0.9", Vector2.new(492, 588), _G.ShortCut)
+    local FemWare                  = Framework:CreateWindow("Femboy Trigger 1.0.9a", Vector2.new(492, 588), _G.ShortCut)
 
     local Credits                  = FemWare:CreateTab("Settings")
     local General                  = FemWare:CreateTab("General")
@@ -616,9 +616,9 @@ local Success, Error = pcall(function()
     local MainS                    = General:CreateSector("Main", "left")
     local MainSS                   = General:CreateSector("Secondary", "right")
     local GunModsS                 = General:CreateSector("Gun Mods", "right")
-    local PlayerS                  = General:CreateSector("Player", "right")
+    local PlayerS                  = General:CreateSector("Player Mods", "right")
     local CustomS                  = Extra:CreateSector("Audio", "right")
-    -- local SilentAimS               = General:CreateSector("Silent Aim", "left")
+    local SilentAimS               = General:CreateSector("Silent Aim", "left")
 
     local PlayerEspS               = Visuals:CreateSector("Player Visuals", "left")
     local ScrapEspS                = Visuals:CreateSector("Scrap Visuals", "right")
@@ -1174,7 +1174,7 @@ local Success, Error = pcall(function()
         -- #region // General Tab
 
             -- #region // Main Sector
-            MainS:AddSeperator("The Good Boys")
+            -- MainS:AddSeperator("The Good Boys")
 
             MainS:AddToggle("Infinite Stamina", Settings.InfiniteStamina, function(V)
                 Settings.InfiniteStamina = V
@@ -1218,7 +1218,7 @@ local Success, Error = pcall(function()
             --     Settings.NoClip = V
             -- end)
 
-            MainSS:AddSeperator("Auto Pick")
+            -- MainSS:AddSeperator("Auto Pick")
 
             MainSS:AddToggle("Auto Scrap", Settings.AutoPickScrap, function(V)
                 Settings.AutoPickScrap = V
@@ -1268,7 +1268,7 @@ local Success, Error = pcall(function()
                 Settings.NoSmoke = V
             end)
 
-            PlayerS:AddSeperator("Character Mods")
+            -- PlayerS:AddSeperator("Character Mods")
 
             PlayerS:AddToggle("WalkSpeed Toggeled", Settings.WalkSpeed.Enabled, function(V)
                 Settings.WalkSpeed.Enabled = V
@@ -1372,7 +1372,7 @@ local Success, Error = pcall(function()
             -- #region // Silent Aim
             -- SilentAimS:AddSeperator("- Silent Aim Settings -")
 
-            local SilentToggle = MainS:AddToggle("Silent Aim", true, function(V)
+            local SilentToggle = SilentAimS:AddToggle("Silent Aim", true, function(V)
                 SilentSettings.Main.Enabled = V
             end, "SilentToggle")
 
@@ -1382,20 +1382,20 @@ local Success, Error = pcall(function()
             --     SilentSettings.Main.VisibleCheck = V
             -- end)
 
-            MainS:AddDropdown("Hit Part", {"Head", "Torso", "Random"}, "Head", false, function(V)
+            SilentAimS:AddDropdown("Hit Part", {"Head", "Torso", "Random"}, "Head", false, function(V)
                 SilentSettings.Main.TargetPart = V
             end)
 
             -- SilentAimS:AddSeperator("- Fov Settings -")
 
-            local SilentAimToggle = MainS:AddToggle("Silent Aim Fov", false, function(V)
+            local SilentAimToggle = SilentAimS:AddToggle("Silent Aim Fov", false, function(V)
                 SilentSettings.FOVSettings.Visible = V
                 SilentAIMFov.Visible = V
             end, "SilentAimVisible")
 
             SilentAimToggle:AddKeybind("None", "SilentAimVisible")
 
-            MainS:AddSlider("Radius", 5, 360, 360, 10, function(V)
+            SilentAimS:AddSlider("Radius", 5, 360, 360, 10, function(V)
                 SilentSettings.FOVSettings.Radius = V
                 SilentAIMFov.Radius = V
             end)
@@ -1457,7 +1457,7 @@ local Success, Error = pcall(function()
                 ESPFramework.FaceCamera = ESPSettings.PlayerESP.FaceCamOn
             end)
 
-            PlayerEspS:AddSeperator("Dealer")
+            -- PlayerEspS:AddSeperator("Dealer")
 
             PlayerEspS:AddToggle("Drug Dealer ESP", false, function(V)
                 ESPFramework.DealerESP = V
@@ -1483,7 +1483,7 @@ local Success, Error = pcall(function()
                 end
             end)
 
-            ScrapEspS:AddSeperator("Rarity")
+            -- ScrapEspS:AddSeperator("Rarity")
 
             ScrapEspS:AddToggle("Legendary Only", ESPSettings.ScrapESP.LegendaryOnly, function(V)
                 ESPSettings.ScrapESP.LegendaryOnly = V
@@ -1501,7 +1501,7 @@ local Success, Error = pcall(function()
                 ESPSettings.ScrapESP.BadOnly = V
             end)
 
-            ScrapEspS:AddSeperator("Distance")
+            -- ScrapEspS:AddSeperator("Distance")
 
             ScrapEspS:AddSlider("Scrap Distance", 250, ESPSettings.ScrapESP.Distance, 2000, 10, function(V)
                 ESPSettings.ScrapESP.Distance = V
@@ -1523,7 +1523,7 @@ local Success, Error = pcall(function()
                 end
             end)
 
-            SafeEspS:AddSeperator("Rarity")
+            -- SafeEspS:AddSeperator("Rarity")
 
             SafeEspS:AddToggle("Big Only", ESPSettings.SafeESP.BigOnly, function(V)
                 ESPSettings.SafeESP.BigOnly = V
@@ -1533,7 +1533,7 @@ local Success, Error = pcall(function()
                 ESPSettings.SafeESP.SmallOnly = V
             end)
 
-            SafeEspS:AddSeperator("Distance")
+            -- SafeEspS:AddSeperator("Distance")
 
             SafeEspS:AddSlider("Safe Distance", 250, ESPSettings.SafeESP.Distance, 2000, 10, function(V)
                 ESPSettings.SafeESP.Distance = V
@@ -1553,7 +1553,7 @@ local Success, Error = pcall(function()
                 end
             end)
 
-            RegisterEspS:AddSeperator("Distance")
+            -- RegisterEspS:AddSeperator("Distance")
 
             RegisterEspS:AddSlider("Register Distance", 250, ESPSettings.RegisterESP.Distance, 2000, 10, function(V)
                 ESPSettings.RegisterESP.Distance = V
@@ -1691,7 +1691,7 @@ local Success, Error = pcall(function()
 
             local TPCFrame          = Cframe
             local User              = game.Players.LocalPlayer.Character.HumanoidRootPart
-            local WaitTime          = 20
+            local WaitTime          = 3
 
             while shared.teleport do wait()
                 
@@ -1712,6 +1712,8 @@ local Success, Error = pcall(function()
 
             end
         end
+
+        TeleportAreas1:AddSeperator("Risk of Dying, Anti Exploit")
 
         TeleportAreas1:AddButton("Vibin Hideout", function()
             TeleportArea(CFrame.new(-4466.548828125, 39.32609939575195, -392.067138671875))
