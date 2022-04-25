@@ -1,4 +1,4 @@
-_G.Criminality = {}
+_G.Criminality = true
 
 if game.PlaceId == 8343259840 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/Loader", true))()
