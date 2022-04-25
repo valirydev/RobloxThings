@@ -1678,6 +1678,7 @@ local Success, Error = pcall(function()
             end)
             InfoS:AddColorpicker("ESP Color", ESPFramework.Color, function(V)
                 ESPFramework.Color = V
+                ESPSettings.ESPColor = V
             end)
             InfoS:AddColorpicker("Silent Aim Color", SilentSettings.SilentAimColor, function(V)
                 SilentAIMFov.Color = V
