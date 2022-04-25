@@ -32,7 +32,7 @@ local Success, Error = pcall(function()
 
     -- #region // Variables
 
-    local Settings                          = { GunMods = { NoRecoil = true, InstantEquip = true, Spread = true, AutoMode = false, SpreadAmount = 0 }, DownedChat = false, KillChat = false, DownedMSG = "", KillMSG = "", IsDead = true, AutoPickCash = false, AutoPickTools = false, AutoPickScrap = false, InfiniteStamina = true, NoJumpCooldown = true, NoFailLockpick = true, ShowChatLogs = true, NoFlashbang  = false, NoSmoke = false, UnlockDoorsNearby = true, OpenDoorsNearby = false, NoClip = false, FullBright = true, CamFovToggled = true, CamFov = 70, InfinitePepperSpray = true, PepperSprayAura = true, WalkSpeed = {Enabled = true, Amount = 30}, JumpPower = {Enabled = true, Amount = 75}, NoBarbwire = false, NoFallDamage = false, NoRagdoll = false, WatermarkOn = false, ViewModel = { Enabled = true, Viewmodel = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Melees = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Guns = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.Plastic }, LeftArmOff = false }, CustomHitSound = 5043539486, VolumeHitsound = 0.5, UIKey = Enum.KeyCode.RightAlt };
+    local Settings                          = { GunMods = { NoRecoil = true, InstantEquip = true, Spread = true, AutoMode = false, SpreadAmount = 0 }, DownedChat = false, KillChat = false, DownedMSG = "IM A FEMALE", KillMSG = "", IsDead = true, AutoPickCash = true, AutoPickTools = true, AutoPickScrap = true, InfiniteStamina = true, NoJumpCooldown = true, NoFailLockpick = true, ShowChatLogs = true, NoFlashbang  = false, NoSmoke = false, UnlockDoorsNearby = true, OpenDoorsNearby = false, NoClip = false, FullBright = false, CamFovToggled = false, CamFov = 70, InfinitePepperSpray = true, PepperSprayAura = true, WalkSpeed = {Enabled = true, Amount = 30}, JumpPower = {Enabled = true, Amount = 75}, NoBarbwire = false, NoFallDamage = false, NoRagdoll = false, WatermarkOn = false, ViewModel = { Enabled = true, Viewmodel = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Melees = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.ForceField }, Guns = { Color = Color3.fromRGB(255, 255, 255), Material = Enum.Material.Plastic }, LeftArmOff = false }, CustomHitSound = 5043539486, VolumeHitsound = 0.5, UIKey = Enum.KeyCode.RightAlt};
     local ESPSettings                       = { PlayerESP = { Enabled = true, TracersOn = false, BoxesOn = false, NamesOn = true, DistanceOn = true, HealthOn = true, FaceCamOn = false }, ScrapESP = { Enabled = false, Distance = 2000, LegendaryOnly = true, RareOnly = true, GoodOnly = true, BadOnly = true }, SafeESP = { Enabled = false, Distance = 2000, BigOnly = true, SmallOnly = true }, RegisterESP = { Enabled = false, Distance = 2000 }, ESPColor = Color3.fromRGB(255, 255, 255)};
     local CoolDowns                         = { AutoPickUps = { MoneyCooldown = false, ScrapCooldown = false, ToolCooldown = false } }
 
@@ -597,11 +597,10 @@ local Success, Error = pcall(function()
 
     -- #region // Objects
 
-    local Framework                = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/UI", true))()
+    local Framework                = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/TestUI", true))()
     local ESPFramework             = loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/ESP.2", true))()
     local Watermark                = Framework:CreateWatermark("FemWare | {game} | {fps}")
-    if not _G.ShortCut then _G.ShortCut = Enum.KeyCode.RightAlt end
-    local FemWare                  = Framework:CreateWindow("FemWare 1.0.9b", Vector2.new(492, 588), _G.ShortCut)
+    local FemWare                  = Framework:CreateWindow("FemWare 1.0.9c", Vector2.new(492, 588))
 
     local Credits                  = FemWare:CreateTab("Settings")
     local General                  = FemWare:CreateTab("General")
@@ -636,7 +635,7 @@ local Success, Error = pcall(function()
     local SilentAIMFov             = Drawing.new("Circle")
     SilentAIMFov.Thickness         = 1
     SilentAIMFov.NumSides          = 100
-    SilentAIMFov.Radius            = 180
+    SilentAIMFov.Radius            = 360
     SilentAIMFov.Filled            = false
     SilentAIMFov.Visible           = false
     SilentAIMFov.ZIndex            = 999
@@ -1231,7 +1230,7 @@ local Success, Error = pcall(function()
             end)
 
             if syn then
-                MainS:AddSeperator("Anti Stuff")
+                MainS:AddSeperator("God Damn")
 
                 MainS:AddToggle("No Barbwire", Settings.NoBarbwire, function(V)
                     Settings.NoBarbwire = V
@@ -1290,7 +1289,7 @@ local Success, Error = pcall(function()
 
             CustomS:AddSeperator("Customization")
 
-            CustomS:AddDropdown("Hit Sounds", {"Boink", "TF2", "Rust", "CSGO", "Hitmarker"}, "Rust", false, function(V)
+            CustomS:AddDropdown("Hit Sounds", {"Yamete", "Suka", "Boink", "TF2", "Rust", "CSGO", "Hitmarker"}, "Rust", false, function(V)
                 local SelectedId = nil
 
                 if V == "Boink" then
@@ -1303,6 +1302,10 @@ local Success, Error = pcall(function()
                     SelectedId = 8679627751
                 elseif V == "Hitmarker" then
                     SelectedId = 160432334
+                elseif V == "Yamete" then
+                    SelectedId = 7418243221
+                elseif V == "Suka" then
+                    SelectedId = 5559988698
                 end
 
                 Settings.CustomHitSound = SelectedId
@@ -1374,7 +1377,7 @@ local Success, Error = pcall(function()
             -- #region // Silent Aim
             -- SilentAimS:AddSeperator("- Silent Aim Settings -")
 
-            local SilentToggle = SilentAimS:AddToggle("Silent Aim", true, function(V)
+            local SilentToggle = SilentAimS:AddToggle("Silent Aim", SilentSettings.Main.Enabled, function(V)
                 SilentSettings.Main.Enabled = V
             end, "SilentToggle")
 
@@ -1390,14 +1393,14 @@ local Success, Error = pcall(function()
 
             -- SilentAimS:AddSeperator("- Fov Settings -")
 
-            local SilentAimToggle = SilentAimS:AddToggle("Silent Aim Fov", false, function(V)
+            local SilentAimToggle = SilentAimS:AddToggle("Silent Aim Fov", SilentSettings.FOVSettings.Visible, function(V)
                 SilentSettings.FOVSettings.Visible = V
                 SilentAIMFov.Visible = V
             end, "SilentAimVisible")
 
             SilentAimToggle:AddKeybind("None", "SilentAimVisible")
 
-            SilentAimS:AddSlider("Radius", 5, 360, 720, 10, function(V)
+            SilentAimS:AddSlider("Radius", 5, SilentSettings.FOVSettings.Radius, 720, 10, function(V)
                 SilentSettings.FOVSettings.Radius = V
                 SilentAIMFov.Radius = V
             end)
@@ -1405,6 +1408,10 @@ local Success, Error = pcall(function()
             MainS:AddButton("Melee God Mode", function()
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/Tobias020108Back/YBA-AUT/main/Criminality-Semi-Godmode.lua", true))()
             end)
+
+            -- MainS:AddButton("No Fall Damage", function()
+                
+            -- end)
 
             MainS:AddButton("WallBang", function()
                 game:service[[Workspace]]:FindFirstChild('Map'):FindFirstChild('Parts'):FindFirstChild('M_Parts').Parent = game:service[[Workspace]]:FindFirstChild('Characters')
@@ -1651,9 +1658,16 @@ local Success, Error = pcall(function()
         -- #region // Credits Tab
 
             -- #region // Credits Sector
-            CreditsS:AddSeperator("Creators")
-            CreditsS:AddLabel("Sakuya - Founder")
-            CreditsS:AddLabel("hook - Fukin furry ofc")
+            CreditsS:AddSeperator("Specials")
+            CreditsS:AddLabel("sakuya - Founder")
+            CreditsS:AddLabel("Outliers Hub - Pro Scripter")
+            CreditsS:AddLabel("hook - Fukin furry")
+
+            local ToggleToggleUI = InfoS:AddToggle("UI Shortcut", true, function(V)
+                game:GetService("RunService").RenderStepped:Wait()
+                game:GetService("CoreGui"):FindFirstChild("FemWare 1.0.9c").Enabled = V
+            end)
+            ToggleToggleUI:AddKeybind(Enum.KeyCode.RightAlt)
 
             InfoS:AddSeperator("Configurations")
             InfoS:AddColorpicker("Accent 1", Framework.theme.accentcolor, function(V)
@@ -1680,8 +1694,6 @@ local Success, Error = pcall(function()
             InfoS:AddLabel("Has pre-loaded script.")
             InfoS:AddLabel("Not racist unlike uwu ware.")
             -- InfoS:AddLabel("Poor non Synapse X users.")
-            if _G.ShortCut == Enum.KeyCode.RightAlt then InfoS:AddLabel("RightAlt to Close/Open UI") end
-
     
             -- #endregion
 
