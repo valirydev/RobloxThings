@@ -4,4 +4,4 @@ if game.PlaceId == 8343259840 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/Loader", true))()
 end
 
--- Nice try decoding FemWare source soft nuts. You got me good
+-- Please stop decoding FemWare source my soft nuts, You got me good
