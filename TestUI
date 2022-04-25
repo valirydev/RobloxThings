@@ -29,8 +29,8 @@ library.theme = {
     backgroundcolor = Color3.fromRGB(20, 20, 20),
     tabstextcolor = Color3.fromRGB(240, 240, 240),
     bordercolor = Color3.fromRGB(60, 60, 60),
-    accentcolor = Color3.fromRGB(252, 255, 255),
-    accentcolor2 = Color3.fromRGB(252, 255, 255),
+    accentcolor = Color3.fromRGB(28, 56, 139),
+    accentcolor2 = Color3.fromRGB(16, 31, 78),
     outlinecolor = Color3.fromRGB(60, 60, 60),
     outlinecolor2 = Color3.fromRGB(0, 0, 0),
     sectorcolor = Color3.fromRGB(30, 30, 30),
@@ -43,6 +43,17 @@ library.theme = {
     itemscolor = Color3.fromRGB(200, 200, 200),
     itemscolor2 = Color3.fromRGB(210, 210, 210)
 }
+
+if not _G.AccentColors then
+    _G.AccentColors = {
+        Accent1 = Color3.fromRGB(252, 255, 255),
+        Accent2 = Color3.fromRGB(255, 255, 255)
+    }
+end
+
+library.theme.accentcolor = _G.AccentColors.Accent1
+library.theme.accentcolor2 = _G.AccentColors.Accent2
+
 
 if library.theme.cursor and Drawing then
     local success = pcall(function() 
