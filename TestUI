@@ -232,7 +232,7 @@ function library:CreateWatermark(name, position)
     return watermark
 end
 
-function library:CreateWindow(name, size, hidebutton)
+function library:CreateWindow(name, size)
     local window = { }
 
     window.name = name or ""
@@ -299,11 +299,11 @@ function library:CreateWindow(name, size, hidebutton)
         window.Frame.BackgroundColor3 = theme.backgroundcolor
     end)
 
-    uis.InputBegan:Connect(function(key)
-        if key.KeyCode == window.hidebutton then
-            window.Frame.Visible = not window.Frame.Visible
-        end
-    end)
+    -- uis.InputBegan:Connect(function(key)
+    --     if key.KeyCode == window.hidebutton then
+    --         window.Frame.Visible = not window.Frame.Visible
+    --     end
+    -- end)
 
     local function checkIfGuiInFront(Pos)
         local objects = coregui:GetGuiObjectsAtPosition(Pos.X, Pos.Y)
