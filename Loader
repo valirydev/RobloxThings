@@ -1,0 +1,6 @@
+local d = true
+if game.PlaceId == 8343259840 then
+  if d == true then d = false
+	  loadstring(game:HttpGet("https://raw.githubusercontent.com/OutliersHub/OutliersHub/main/Criminality",true))()
+  end
+end
