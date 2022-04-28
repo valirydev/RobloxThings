@@ -238,10 +238,10 @@ function boxBase:Update()
 		self.Components.Distance.Visible = false
 	end
 	
-	if ESP.Health then
-		    local TagPos, Vis5 = WorldToViewportPoint(cam, locs.TagPos.p)
+    if self.Player then
+        if ESP.Health then
+            local TagPos, Vis5 = WorldToViewportPoint(cam, locs.TagPos.p)
 
-            if self.Player then
                 if Vis5 then
                     self.Components.Health.Visible = true
                     self.Components.Health.Position = Vector2.new(TagPos.X, TagPos.Y + 14)               
@@ -250,12 +250,12 @@ function boxBase:Update()
                 else
                     self.Components.Health.Visible = false
                 end
-            else
-                self.Components.Health.Visible = false
-            end
-	else
-		self.Components.Health.Visible = false
-	end
+        else
+            self.Components.Health.Visible = false
+        end
+    else
+        self.Components.Health.Visible = false
+    end
 
     if ESP.Tool then
         if self.Player then
