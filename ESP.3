@@ -232,7 +232,7 @@ function boxBase:Update()
 			self.Components.Distance.Visible = true
 			self.Components.Distance.Position = Vector2.new(TagPos.X, TagPos.Y + 28)
 			self.Components.Distance.Text = math.floor((cam.CFrame.p - cf.p).magnitude) .."m"
-			self.Components.Distance.Color = ESP.DistanceColor
+			self.Components.Distance.Color = color
 		else
 			self.Components.Distance.Visible = false
 		end
@@ -241,18 +241,20 @@ function boxBase:Update()
 	end
 	
 	if ESP.Health then
-        if self.Player then
-		    local TagPos, Vis5 = WorldToViewportPoint(cam, locs.TagPos.p)
+		local TagPos, Vis5 = WorldToViewportPoint(cam, locs.TagPos.p)
 
-            if Vis5 then
-                self.Components.Health.Visible = true
-                self.Components.Health.Position = Vector2.new(TagPos.X, TagPos.Y + 14)                
-                self.Components.Health.Text = math.floor(self.Player.Character.Humanoid.Health + 0.5)  .. ":" .. self.Player.Character.Humanoid.MaxHealth
-                self.Components.Health.Color = ESP.HealthColor
-            else
-                self.Components.Health.Visible = false
-            end
-        end
+		if Vis5 then
+			self.Components.Health.Visible = true
+			self.Components.Health.Position = Vector2.new(TagPos.X, TagPos.Y + 14)
+			if not self.Player then
+				self.Components.Health.Text = ""
+			else
+				self.Components.Health.Text = math.floor(self.Player.Character.Humanoid.Health + 0.5)  .. ":" .. self.Player.Character.Humanoid.MaxHealth
+				self.Components.Health.Color = color
+			end
+		else
+			self.Components.Health.Visible = false
+		end
 	else
 		self.Components.Health.Visible = false
 	end
@@ -266,7 +268,7 @@ function boxBase:Update()
                 self.Components.Tool.Position = Vector2.new(TagPos.X, TagPos.Y - 14)
                 if self.Player.Character:FindFirstChildOfClass("Tool") then
                     self.Components.Tool.Text = self.Player.Character:FindFirstChildOfClass("Tool").Name
-                    self.Components.Tool.Color = ESP.ToolColor
+                    self.Components.Tool.Color = ToolColor
                 else
                     self.Components.Tool.Visible = false
                 end
