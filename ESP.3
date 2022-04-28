@@ -261,23 +261,19 @@ function boxBase:Update()
 
 		if Vis5 then
 			self.Components.Tool.Visible = true
-			self.Components.Tool.Position = Vector2.new(TagPos.X, TagPos.Y - 14)
-			if self.Player then
-                if self.Player.Character:FindFirstChildOfClass("Tool") then
-				    self.Components.Tool.Text = self.Player.Character:FindFirstChildOfClass("Tool").Name
-			    else
-				    self.Components.Tool.Text = ""
-				    self.Components.Tool.Color = color
-                end
-			end
-		else
-			self.Components.Tool.Visible = false
-		end
+			self.Components.Tool.Position = Vector2.new(TagPos.X, TagPos.Y)
+            if self.Player.Character:FindFirstChildOfClass("Tool") then
+			    self.Components.Tool.Text = self.Player.Character:FindFirstChildOfClass("Tool").Name
+			    self.Components.Tool.Color = color
+		    else
+			    self.Components.Tool.Visible = false
+		    end
+        end
 	else
 		self.Components.Tool.Visible = false
 	end
 	
-	if ESP.Names then
+	if ESP.Tool then
 		local TagPos, Vis5 = WorldToViewportPoint(cam, locs.TagPos.p)
 
 		if Vis5 then
