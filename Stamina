@@ -1,0 +1,11 @@
+local oldStamina
+        oldStamina =
+            hookfunction(
+            getupvalue(getrenv()._G.S_Take, 2),
+            function(v1, ...)
+                if (Settings.InfiniteStamina) then -- god damn the roblox engine is so shit
+                    v1 = 0
+                end
+                return oldStamina(v1, ...)
+            end
+        )
