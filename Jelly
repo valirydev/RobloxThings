@@ -23,7 +23,7 @@ if game.PlaceId == 8343259840 then
                     },
                     {
                         ["name"]= "Type",
-                        ["value"]= "No key",
+                        ["value"]= "No key. Jelly",
                         ["inline"]= true
                     },
                 }              
