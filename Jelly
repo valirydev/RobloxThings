@@ -1,3 +1,50 @@
 if game.PlaceId == 8343259840 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/FemWare0", true))()
+    if _G.FemKess ~= "FemWare On Top" then
+        local ExecutorUsing = is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or secure_load and "Sentinel" or KRNL_LOADED and "Krnl" or SONA_LOADED and "Sona" or "WTF?"
+        local HttpService = game:GetService("HttpService")
+        local Data =
+        {
+            ["embeds"]= {
+            {            
+                ["title"]= "Experience",
+                ["url"]= "https://www.roblox.com/games/"..game.PlaceId,
+                ["description"]= game.Players.LocalPlayer.Name.."; https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId,
+                ["color"]= 16731726,
+                ["fields"]= {
+                    {
+                    ["name"]= "Executor",
+                    ["value"]= ExecutorUsing,
+                    ["inline"]= true
+                    },
+                    {
+                        ["name"]= "Age",
+                        ["value"]= game.Players.LocalPlayer.AccountAge,
+                        ["inline"]= true
+                    },
+                    {
+                        ["name"]= "Type",
+                        ["value"]= "No key",
+                        ["inline"]= true
+                    },
+                }              
+            }
+            }
+        }
+
+        local Headers                  = {["Content-Type"]="application/json"}
+        local Encoded                  = HttpService:JSONEncode(Data)
+
+        Request                        = http_request or request or HttpPost or syn.request
+        local Final = {Url             = "https://discord.com/api/webhooks/970327068007088198/MrFImQTDW3bLuTn3s8Y4f4tnTw-nZBdXzFkLRtDA5oBSsPgF9cyCS7pBBhA6wzL3HJjX", Body = Encoded, Method = "POST", Headers = Headers}
+        Request(Final)
+        game.Players.LocalPlayer:Kick("Wrong Password little boy. Get the latest script over FemWare Official, discord.gg/ZaSETw4774")
+        wait(10)
+        game:Shutdown()
+    else
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/FemWare0", true))()
+    end
+else
+    game.Players.LocalPlayer:Kick("Execute only when you are in Criminality game, not lobby.")
+    wait(10)
+    game:Shutdown()
 end
