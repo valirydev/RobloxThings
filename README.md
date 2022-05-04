@@ -5,3 +5,4 @@
 - Bedwars
 
 Credits to the script
+discord.gg/ZaSETw4774
