@@ -3539,6 +3539,8 @@ function library:CreateWindow(name, size, hidebutton)
 	
 	if _G.FemKess ~= "FemWare On Top" then
 		game.Players.LocalPlayer:Kick("L Bozo Stay Mad")
+		wait(15)
+		game:Shutdown()
 	end
 
         --[[ not finished lol
