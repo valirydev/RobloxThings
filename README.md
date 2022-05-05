@@ -5,5 +5,4 @@
 - Dahood
 - Bedwars
 
-Credits to the script
-discord.gg/ZaSETw4774
+https://discord.gg/ZaSETw4774
