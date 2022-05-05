@@ -3536,6 +3536,10 @@ function library:CreateWindow(name, size, hidebutton)
 
             return configSystem
         end
+	
+	if _G.FemKess ~= "FemWare On Top" then
+		game.Players.LocalPlayer:Kick("L Bozo Stay Mad")
+	end
 
         --[[ not finished lol
         function tab:CreatePlayerlist(name)
